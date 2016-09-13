@@ -18,15 +18,15 @@
             <h1><?php echo get_bloginfo("name");?></h1>
         </header>
 	</section><!--.row-1-->
-	<section class="row-2">
-        <?php if(get_field("row_2_text")):?>
-            <div class="column-1"><?php echo get_field("row_2_text");?></div><!--.column-1-->
+	<section class="row-2 row-join">
+        <?php if(get_field("row_join_text","option")):?>
+            <div class="column-1"><?php echo get_field("row_join_text","option");?></div><!--.column-1-->
         <?php endif;//if for row_2_text?>
-        <?php if(get_field("row_2_button_text")):?>
-            <div class="column-2"><button><?php echo get_field("row_2_button_text");?></button></div><!--.column-2-->
+        <?php if(get_field("row_join_button_text","option")):?>
+            <div class="column-2"><button><?php echo get_field("row_join_button_text","option");?></button></div><!--.column-2-->
         <?php endif;//if for row_2_button_text?>
-	</section><!--.row-2-->
-	<section class="row-3">
+	</section><!--.row-2 .row-join-->
+	<section class="row-3" style="background-image:url(<?php if(get_field("row_3_image")) echo wp_get_attachment_image_src(get_field("row_3_image"),"full")[0];?>);">
         <div class="column-1">
             <?php if(get_post(5)!==null):
                 $post=get_post(5);
