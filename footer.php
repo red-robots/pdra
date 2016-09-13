@@ -14,13 +14,22 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="wrapper">
-			<div class="site-info">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'acstarter' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'acstarter' ), 'WordPress' ); ?></a>
-				<span class="sep"> | </span>
-				<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'acstarter' ), 'acstarter', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-			</div><!-- .site-info -->
-	</div><!-- wrapper -->
+		<div class="row-1">
+            <div class="column-1">
+                <?php wp_nav_menu( array( 'theme_location' => 'footer_left' ) ); ?>
+			</div><!--.column-1-->
+            <div class="column-2">
+                <?php wp_nav_menu( array( 'theme_location' => 'footer_right') ); ?>
+            </div><!--.column-2-->
+        </div><!-- .row-1 -->
+		<div class="row-2">
+            <div class="column-1">
+                <?php if( get_field("email","option")) echo get_field("email","option");?>
+            </div><!--.column-1-->
+            <div class="column-2">
+                <?php wp_nav_menu( array( 'theme_location' => 'sitemapBW') ); ?>
+            </div><!--.column-2-->
+        </div><!-- .row-2 -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
