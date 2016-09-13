@@ -132,7 +132,7 @@ add_action( 'admin_menu', 'change_post_menu_label' );
   Add a last and first menu class option
 ---------------------------------------*/
 
-function ac_first_and_last_menu_class($items) {
+/*function ac_first_and_last_menu_class($items) {
   foreach($items as $k => $v){
     $parent[$v->menu_item_parent][] = $v;
   }
@@ -142,4 +142,5 @@ function ac_first_and_last_menu_class($items) {
   }
   return $items;
 }
-add_filter('wp_nav_menu_objects', 'ac_first_and_last_menu_class');
+add_filter('wp_nav_menu_objects', 'ac_first_and_last_menu_class');*/
+
