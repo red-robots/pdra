@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name : Leadership Landing
+ * Template Name: Quarry Landing
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -15,7 +15,7 @@ get_header(); ?>
 			<?php
 			if( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'leadership' );
+				get_template_part( 'template-parts/content', 'quarry-landing' );
 
 			endif; // End of the if.
 			?>

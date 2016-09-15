@@ -61,7 +61,7 @@
                     <img src="<?php echo wp_get_attachment_image_src(get_field("pdf_image"),"full")[0];?>" alt="<?php echo get_post(get_field("pdf_image"))!==null?get_post(get_field("pdf_image"))->post_title:"";?>">
                 </div><!--.pdf-image-->
             <?php endif;?>
-            <?php if(get_field("button_text")&&get_field("pdf_link")):?>
+            <?php if(get_field("pdf_button_text")&&get_field("pdf_link")):?>
                 <div class="button">
                     <?php echo get_field("pdf_button_text");?>
                     <a class="surrounding" href="<?php echo get_field("pdf_link");?>" target="_blank"></a>
