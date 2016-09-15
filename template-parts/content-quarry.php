@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <section class="row-1">
-		<?php $args=('posts_per_page'=>-1,'post_type'=>'quarry');
+		<?php $args=array('posts_per_page'=>-1,'post_type'=>'quarry');
 		$query = new WP_Query($args);
 		if($query->have_posts()):?>
             <ul>

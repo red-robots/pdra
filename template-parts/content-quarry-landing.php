@@ -14,7 +14,7 @@
         <header><h1><?php echo get_the_title();?></h1></header>
     </section>
 	<section class="row-2">
-        <?php $args=('posts_per_page'=>-1,'post_type'=>'quarry');
+        <?php $args=array('posts_per_page'=>-1,'post_type'=>'quarry');
 		$query = new WP_Query($args);
 		if($query->have_posts()):?>
             <?php $count = $query->max_num_pages;

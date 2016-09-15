@@ -55,7 +55,7 @@
                     <div class="email"><a class="surrounding" target="_blank" href="<?php echo $row['email'];?>"></a></div><!--.email-->
                 <?php endif;?>
             </div><!--.officer-->
-        <?php endforeach;?>
+        <?php endfor;?>
 	</section><!--.row-3-->
 	<section class="row-4">
         <header><h2><?php if(get_field("board_title"))echo get_field("board_title");else echo "Board of Directors";?></h2></header>
@@ -82,7 +82,7 @@
                         <div class="email"><a class="surrounding" target="_blank" href="<?php echo $row['email'];?>"></a></div><!--.email-->
                     <?php endif;?>
                 </div><!--.board-north-->
-            <?php endforeach;?>
+            <?php endfor;?>
         </div><!--.north-district .wrapper-->
         <div class="central-district wrapper">
             <header><h3><?php if(get_field("board_central_title"))echo get_field("board_central_title");else echo "Central District";?></h3></header>
@@ -107,7 +107,7 @@
                         <div class="email"><a class="surrounding" target="_blank" href="<?php echo $row['email'];?>"></a></div><!--.email-->
                     <?php endif;?>
                 </div><!--.board-central-->
-            <?php endforeach;?>
+            <?php endfor;?>
         </div><!--.central-district .wrapper-->
         <div class="south-district wrapper">
             <header><h3><?php if(get_field("board_south_title"))echo get_field("board_south_title");else echo "South District";?></h3></header>
@@ -132,7 +132,7 @@
                         <div class="email"><a class="surrounding" target="_blank" href="<?php echo $row['email'];?>"></a></div><!--.email-->
                     <?php endif;?>
                 </div><!--.board-south-->
-            <?php endforeach;?>
+            <?php endfor;?>
         </div><!--.south-district .wrapper-->
 	</section><!--.row-4-->
 	<section class="row-5">
@@ -149,6 +149,6 @@
                     <div class="location"><?php echo $row['location'];?></div><!--.location-->
                 <?php endif;?>
             </div><!--.trustee-->
-        <?php endforeach;?>
+        <?php endfor;?>
 	</section><!--.row-5-->
 </article><!-- #post-## -->
