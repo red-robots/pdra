@@ -14,7 +14,7 @@
 		<?php $matches = array();
 		$title = false;
 		$menu_string = wp_nav_menu( array( 'theme_location' => 'primary','echo'=>false ));
-		$return = return_sub_menu($menu_string);
+		$return = return_sub_menu_no_recursion($menu_string);
         if($return!==-1):
             echo $return;
         else: ?>

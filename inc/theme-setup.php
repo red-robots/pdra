@@ -76,6 +76,11 @@ function acstarter_setup() {
 endif;
 add_action( 'after_setup_theme', 'acstarter_setup' );
 
+  /*
+   * Custom image size for gallery
+   */
+   add_image_size("gallery",600,500,array('center','center'));
+   
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -138,6 +143,7 @@ function return_sub_menu($menu_string){
             $poss_items[$offset]=1;
         }while($offset<strlen($menu_string));
     }
+    //make sure they are in order for the next loops
     sort($poss,SORT_NUMERIC);
     $count=0;
     $start_index = -1;
@@ -164,4 +170,99 @@ function return_sub_menu($menu_string){
     }
     if($end_index===-1)return -1;
     return substr($menu_string,$start_index,$end_index-$start_index);
+}
+function return_sub_menu_no_recursion($menu_string){
+    $index = strpos($menu_string,"current-menu-item");
+    if($index === -1)return -1;
+    $start_matched = preg_match('/.*?(<\s*ul[^>]*sub-menu[^>]*>).*?/i', $menu_string, $start_matches);
+    $end_matched = preg_match('/.*?(<\s*\/\s*ul\s*>).*?/i', $menu_string, $end_matches);
+    if($start_matched!==1||$end_matched!==1) return -1;
+    $saved_start_matches = $start_matches;
+    $poss = array();
+    $poss_items = array();
+    $poss_length = array();
+    $offset = -1;
+    for($j = 1;$j<count($saved_start_matches);$j++){
+        $match = $saved_start_matches[$j];
+        do{
+            $offset++;
+            $offset = strpos($menu_string,$match,$offset);
+            if($offset===false)break;
+            $poss[]=$offset;
+            $poss_items[$offset]=0;
+            $poss_length[$offset]=strlen($match);
+        }while($offset<strlen($menu_string));
+    }
+    $saved_end_matches = $end_matches;
+    $offset = -1;
+    for($j = 1;$j<count($saved_end_matches);$j++){
+        $match = $saved_end_matches[$j];
+        do{
+            $offset++;
+            $offset = strpos($menu_string,$match,$offset);
+            if($offset===false)break;
+            $poss[]=$offset;
+            $poss_items[$offset]=1;
+            $poss_length[$offset]=strlen($match);
+        }while($offset<strlen($menu_string));
+    }
+    //make sure they are in order for the next loops
+    sort($poss,SORT_NUMERIC);
+    //holds all sub menu starting tags
+    $remove_start_index = array();
+    //holds all ul ending tags
+    $remove_end_index = array();
+    $count=0;
+    $start_index = -1;
+    for($i = count($poss)-1;$i>=0;$i--){
+        if($poss[$i]>$index)continue;
+        if($poss_items[$poss[$i]]===0&&$count===0){
+            $start_index = $poss[$i];
+            break;
+        }
+        elseif($poss_items[$poss[$i]]===0){
+            $count--;
+            if($count===0){
+                $remove_start_index[]=$poss[$i];
+            }
+        }
+        else {
+            $count++;
+            if($count===1){
+                $remove_end_index[]=$poss[$i];
+            }
+        }
+    }
+    if($start_index===-1||count($remove_start_index)!==count($remove_end_index))return -1;
+    $count=0;
+    $end_index = -1;
+    for($i = 0;$i<count($poss);$i++){
+        if($poss[$i]<$index)continue;
+        if($poss_items[$poss[$i]]===1&&$count===0){
+            $end_index = $poss[$i];
+            break;
+        }
+        elseif($poss_items[$poss[$i]]===1){
+            $count--;
+            if($count===0){
+                $remove_end_index[]=$poss[$i];
+            }
+        }
+        else {
+            $count++;
+            if($count===1){
+                $remove_start_index[]=$poss[$i];
+            }
+        }
+    }
+    if($end_index===-1||count($remove_start_index)!==count($remove_end_index))return -1;
+    $temp_start_index = $start_index;
+    $return = "";
+    for($i = 0;$i<count($remove_start_index);$i++){
+        $length = $remove_start_index[$i]-$temp_start_index;
+        $return.=substr($menu_string,$temp_start_index,$length);
+        $temp_start_index = $remove_end_index[$i]+$poss_length[$remove_end_index[$i]];
+    }
+    $return.=substr($menu_string,$temp_start_index,$end_index-$temp_start_index+$poss_length[$end_index]);
+    return $return;
 }
