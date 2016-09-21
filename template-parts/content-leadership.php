@@ -86,7 +86,7 @@
         </div><!--.north-district .wrapper-->
         <div class="central-district wrapper">
             <header><h3><?php if(get_field("board_central_title"))echo get_field("board_central_title");else echo "Central District";?></h3></header>
-            <?php $rows = get_field("board_north");
+            <?php $rows = get_field("board_central");
             $count = count($rows);
             for($i=0;$i<$count;$i++):
                 $row = $rows[$i];?>
