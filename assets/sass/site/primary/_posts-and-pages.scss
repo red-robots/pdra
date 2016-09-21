@@ -1,28 +1,177 @@
-.sticky {
-	display: block;
+article {
+    /* index page */
+    .row-1 {
+        header {
+            h1 {
+            }
+        }
+    }
+    .row-2 {
+        /* see row join */
+    }
+    .row-3 {
+        .column-1, .column-2, .column-3 {
+            header {
+                h2 {
+                }
+            }
+            .copy {
+            }
+        }
+    }
+    /* leadership page */
+    .row-1 {
+        /* see standard sub nav */
+    }
+    .row-2 {
+        header {
+            h1 {
+            }
+        }
+        .copy {
+        }
+    }
+    .row-3 {
+        header {
+            h2 {
+            }
+        }
+        .officer {
+            img {
+            }
+            .title {
+            }
+            .term {
+            }
+            .tel {
+            }
+            .email {
+            }
+        }
+    }
+    .row-4 {
+        header {
+            h2 {
+            }
+        }
+        .north-district {
+            header {
+                h3 {
+                }
+            }
+            .board-north {
+                img {
+                }
+                .title {
+                }
+                .term {
+                }
+                .tel {
+                }
+                .email {
+                }
+            }
+        }
+        .central-district {
+            header {
+                h3 {
+                }
+            }
+            .board-north {
+                img {
+                }
+                .title {
+                }
+                .term {
+                }
+                .tel {
+                }
+                .email {
+                }
+            }
+        }
+        .south-district {
+            header {
+                h3 {
+                }
+            }
+            .board-north {
+                img {
+                }
+                .title {
+                }
+                .term {
+                }
+                .tel {
+                }
+                .email {
+                }
+            }
+        }
+    }
+    .row-5 {
+        header {
+            h2 {
+            }
+        }
+        .manager {
+            img {
+            }
+            .title {
+            }
+            .term {
+            }
+            .tel {
+            }
+            .email {
+            }
+        }
+    }
+    .row-6 {
+        header {
+            h2 {
+            }
+        }
+        .trustee {
+            .name {
+            }
+            .location {
+            }
+        }
+    }
+    /* page template */
+    .row-1 {
+        /* see standard sub nav */
+    }
+    .row-2 {
+        header {
+            h1 {
+            }
+        }
+        .copy {
+        }
+    }
+    .row-3 {
+        /* see row join */
+    }
 }
-
-.hentry {
-	margin: 0 0 1.5em;
+/*standard template for sub-nav header*/
+.standard-sub-nav {
+    header {
+        h1 {
+        }
+    }
+    ul.sub-menu {
+        li {
+        }
+    }
 }
-
-.byline,
-.updated:not(.published){
-	display: none;
-}
-
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+/*standard template for row-join */
+.row-join {
+    .column-1 {
+    }
+    .column-2 {
+        .button {
+        }
+    }
 }

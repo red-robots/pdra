@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <section class="row-1">
+    <section class="row-1 standard-sub-nav">
 		<?php $matches = array();
 		$title = false;
 		$menu_string = wp_nav_menu( array( 'theme_location' => 'primary','echo'=>false ));

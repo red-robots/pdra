@@ -21,10 +21,10 @@
 	<section class="row-2 row-join">
         <?php if(get_field("row_join_text","option")):?>
             <div class="column-1"><?php echo get_field("row_join_text","option");?></div><!--.column-1-->
-        <?php endif;//if for row_2_text?>
+        <?php endif;//if for row_join_text?>
         <?php if(get_field("row_join_button_text","option")):?>
-            <div class="column-2"><button><?php echo get_field("row_join_button_text","option");?></button></div><!--.column-2-->
-        <?php endif;//if for row_2_button_text?>
+            <div class="column-2"><div class="button"><?php echo get_field("row_join_button_text","option");?></div></div><!--.column-2-->
+        <?php endif;//if for row_join_button_text?>
 	</section><!--.row-2 .row-join-->
 	<section class="row-3" style="background-image:url(<?php if(get_field("row_3_image")) echo wp_get_attachment_image_src(get_field("row_3_image"),"full")[0];?>);">
         <div class="column-1">
