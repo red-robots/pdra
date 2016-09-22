@@ -130,46 +130,90 @@ article {
         }
     }
     /* leadership page */
-    .row-1 {
-        /* see standard sub nav */
-    }
-    .row-2 {
-        header {
-            h1 {
-            }
+    &#post-12 {
+        .row-1 {
+            /* see standard sub nav */
         }
-        .copy {
-        }
-    }
-    .row-3 {
-        header {
-            h2 {
-            }
-        }
-        .officer {
-            img {
-            }
-            .title {
-            }
-            .term {
-            }
-            .tel {
-            }
-            .email {
-            }
-        }
-    }
-    .row-4 {
-        header {
-            h2 {
-            }
-        }
-        .north-district {
+        .row-2 {
+            padding: $margin-medium $margin-large;
+            @media screen and (min-width: $mobilelandscapewidth){
+                padding: $margin-standard-vertical-full-width-medium $margin-standard-horizontal-full-width 0 $margin-standard-horizontal-full-width;
+            } 
             header {
-                h3 {
+                width: 30%;
+                text-align: center;
+                border-bottom: 2px solid $color__pdra-dark-blue;
+                margin: 0 auto;
+                h1 {
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    padding: 0;
                 }
             }
-            .board-north {
+            .copy {
+            }
+        }
+        .row-3, .row-4, .row-5 {
+            padding: $margin-medium $margin-large;
+            @media screen and (min-width: $mobilelandscapewidth){
+                padding: 0 $margin-standard-horizontal-full-width;
+            } 
+            &:after {
+                clear: both;
+                content: "";
+                display: block;
+            } 
+            > header {
+                width: 30%;
+                text-align: left;
+                border-bottom: 2px solid $color__pdra-dark-blue;
+                margin: 30px auto 8px 0;
+                h2 {
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    padding: 0;
+                }
+            }
+            .north-district, .south-district, .central-district {
+                &:after {
+                    clear: both;
+                    content: "";
+                    display: block;
+                }
+                header {
+                    width: 30%;
+                    text-align: left;
+                    margin: 30px auto 3px 0;
+                    h3 {
+                        font-size: $font__size-medium;
+                        text-transform: uppercase;
+                        color: $color__pdra-dark-blue;
+                        padding: 0;
+                    }
+                }
+            }
+            .north-district {
+                header {
+                    margin-top: 10px;
+                }
+            }
+            .officer, .board-north, .board-central, .board-south, .manager {
+                float: left;
+                width: 40%;
+                margin: 0 0 0 10%;
+                @media screen and (min-width: $mobilelandscapewidth){
+                    width: 30%;
+                    margin: 0 0 0 5%;
+                    &.count-0 {
+                        clear: left;
+                    }
+                    &.count-2 {
+                        clear: right;
+                    }
+                }
+                &.count-0 {
+                    margin: 0;
+                }
                 img {
                 }
                 .title {
@@ -182,70 +226,48 @@ article {
                 }
             }
         }
-        .central-district {
+        .row-6 {
+            padding: $margin-medium $margin-large;
+            @media screen and (min-width: $mobilelandscapewidth){
+                padding: 0 $margin-standard-horizontal-full-width $margin-standard-vertical-full-width-medium $margin-standard-horizontal-full-width;
+            }  
+            &:after {
+                clear: both;
+                content: "";
+                display: block;
+            }
             header {
-                h3 {
+                width: 30%;
+                text-align: left;
+                border-bottom: 2px solid $color__pdra-dark-blue;
+                margin: 30px auto 5px 0;
+                h2 {
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    padding: 0;
                 }
             }
-            .board-north {
-                img {
+            .trustee { 
+                float: left;
+                width: 40%;
+                margin: 0 0 0 10%;
+                @media screen and (min-width: $mobilelandscapewidth){
+                    width: 30%;
+                    margin: 0 0 0 5%;
+                    &.count-0 {
+                        clear: left;
+                    }
+                    &.count-2 {
+                        clear: right;
+                    }
                 }
-                .title {
+                &.count-0 {
+                    margin: 0;
                 }
-                .term {
+                .name {
                 }
-                .tel {
+                .location {
                 }
-                .email {
-                }
-            }
-        }
-        .south-district {
-            header {
-                h3 {
-                }
-            }
-            .board-north {
-                img {
-                }
-                .title {
-                }
-                .term {
-                }
-                .tel {
-                }
-                .email {
-                }
-            }
-        }
-    }
-    .row-5 {
-        header {
-            h2 {
-            }
-        }
-        .manager {
-            img {
-            }
-            .title {
-            }
-            .term {
-            }
-            .tel {
-            }
-            .email {
-            }
-        }
-    }
-    .row-6 {
-        header {
-            h2 {
-            }
-        }
-        .trustee {
-            .name {
-            }
-            .location {
             }
         }
     }
@@ -254,7 +276,7 @@ article {
             /* see standard sub nav */
         }
         .row-2 {
-            padding: 4% 18%;
+            padding: $margin-standard-vertical-full-width-medium $margin-standard-vertical-full-width-extra-large;
             header {
                 width: 30%;
                 text-align: center;
