@@ -23,7 +23,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header clear-bottom" role="banner">
         <div class="logo wrapper">
             <?php if(get_field("logo","option")):?>
                 <img class="logo" src="<?php echo wp_get_attachment_image_src(get_field("logo","option"),"full")[0];?>" alt="<?php echo get_post("logo","option")!==null?get_post(get_field("logo","option"))->post_title:"";?>">

@@ -3,10 +3,6 @@ div {
 	/* These are technically the same, but use both */
 	overflow-wrap: break-word;
 	word-wrap: break-word;
-
-	-ms-word-break: break-all;
-	/* This is the dangerous one in WebKit, as it breaks things wherever */
-	word-break: break-all;
 	/* Instead use this non-standard one: */
 	word-break: break-word;
 
@@ -17,7 +13,91 @@ div {
 	hyphens: auto;
 }
 .clear {clear: both;}
+.clear-bottom {
+    &:after {
+        clear: both;
+        display: block;
+        content: "";
+    }
+}
 .wrapper {
 	width: 100%;
 	margin: 0px auto;
+}
+
+#masthead {
+    padding: $margin-medium $margin-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+	@media screen and (min-width: $mobilelandscapewidth){
+        padding: $margin-medium $margin-standard-full-width;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    .logo.wrapper {
+        width: 70%; 
+        @media screen and (min-width: $mobilelandscapewidth){
+            width: 20%;
+            float: left;
+        }
+        .logo {
+            width: 100%;
+        }
+    }
+    #site-navigation {
+        width: 100%;
+        @media screen and (min-width: $mobilelandscapewidth){
+            width: 70%;
+        }
+        .menu-main-menu-container {
+            #primary-menu {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                > li {
+                    float: none;
+                    display: inline-block;
+                    padding: 0 0 0 $margin-small;
+                    position: relative;
+                    &:first-child {
+                        padding: 0;
+                    }
+                    &:hover > ul,
+                    &.focus > ul {
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                    a {
+                        text-decoration: none;
+                        color: $color__text-main;
+                        &:hover {
+                            color: $color_pdra-dark-blue;
+                        }
+                    }
+                    .sub-menu {
+                        width: 250px;
+                        text-align: left;
+                        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+                        float: left;
+                        position: absolute;
+                        top: 1.5em;
+                        left: -999em;
+                        z-index: 2;
+                        margin: 0;
+                        padding: $margin-small;
+                        li {
+                            list-style-type: none;
+                            padding: 0;
+                            margin: 0;
+                            a {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
