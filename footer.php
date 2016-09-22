@@ -19,6 +19,9 @@
                 <?php wp_nav_menu( array( 'theme_location' => 'footer_left' ) ); ?>
 			</div><!--.column-1-->
             <div class="column-2">
+                <?php if(get_field("footer_quarry_title")):?>
+                    <div class="footer-quarry-title"><?php echo get_field("footer_quarry_title");?></div>
+                <?php endif;?>
                 <?php wp_nav_menu( array( 'theme_location' => 'footer_right') ); ?>
             </div><!--.column-2-->
         </div><!-- .row-1 -->

@@ -33,7 +33,7 @@ div {
     align-content: center;
     flex-wrap: wrap;
 	@media screen and (min-width: $mobilelandscapewidth){
-        padding: $margin-medium $margin-standard-full-width;
+        padding: $margin-medium $margin-standard-header-full-width;
         justify-content: space-between;
         flex-wrap: nowrap;
     }
@@ -74,7 +74,7 @@ div {
                         text-decoration: none;
                         color: $color__text-main;
                         &:hover {
-                            color: $color_pdra-dark-blue;
+                            color: $color__pdra-dark-blue;
                         }
                     }
                     .sub-menu {
@@ -94,6 +94,95 @@ div {
                             margin: 0;
                             a {
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#colophon {
+    background-color: $color__pdra-teal;
+    padding: $margin-medium $margin-large;
+    @media screen and (min-width: $mobilelandscapewidth){
+        padding: $margin-standard-vertical-full-width-large $margin-standard-horizontal-full-width $margin-standard-vertical-full-width-medium $margin-standard-horizontal-full-width;
+    }
+    .column-1 {
+        text-align: left;
+    }
+    .column-2 {
+        text-align: right;
+    }
+    .column-1, .column-2 {
+        padding: 0;
+        margin: 0;
+        color: white;
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .row-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        padding: 0 0 $margin-medium 0;
+        @media screen and (min-width: $mobilelandscapewidth){
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+        .column-1 {
+        }
+        .column-2 {
+            .footer-quarry-title {
+                margin: 0;
+                padding: 0;
+                font-weight: 600;
+            }
+        }
+    }
+    .row-2 {
+        border-top: 2px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        padding: $margin-medium 0 0 0;
+        @media screen and (min-width: $mobilelandscapewidth){
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+        .column-1 {
+        }
+        .column-2 {
+            ul {
+                li {
+                    float:left;
+                    &:first-child {
+                        a:before {
+                            display: none;
+                        }
+                    }
+                    a {
+                        &:before {
+                            content:"";
+                            border-right: 2px solid white;
+                            height: 15px;
+                            margin: 0 8px;
+                            display: inline-block;
+                            vertical-align: middle;
                         }
                     }
                 }
