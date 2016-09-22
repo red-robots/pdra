@@ -1,21 +1,110 @@
 article {
     /* index page */
-    .row-1 {
-        header {
-            h1 {
+    &#post-51 {
+        .row-1 {
+            position: relative;
+            img.full-width {
+                width: 100%;
+                display: block;
             }
-        }
-    }
-    .row-2 {
-        /* see row join */
-    }
-    .row-3 {
-        .column-1, .column-2, .column-3 {
             header {
-                h2 {
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                width: 80%;
+                top: 50%;
+                left: 50%;
+                z-index: 1;
+                transform: translateY(-50%) translateX(-50%);
+                text-align: center;
+                h1 {
+                    margin: 0;
+                    padding: 0;
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: white;
+                    @media screen and (min-width: $mobilelandscapewidth){
+                        font-size: 30px;
+                    }    
+                    @media screen and (min-width: $tabwidth){
+                        font-size: 55px;
+                    }
                 }
             }
-            .copy {
+        }
+        .row-2 {
+            /* see row join */
+        }
+        .row-3 {
+            position: relative;
+            padding: $margin-medium $margin-large;
+            @media screen and (min-width: $mobilelandscapewidth){
+                padding: $margin-standard-vertical-full-width-large $margin-standard-horizontal-full-width;
+            } 
+            .background-image {
+                display: block;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background-size: cover;
+                width: 100%;
+                z-index: -2;
+                position: absolute;
+                &:before {
+                    display: block;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    z-index: 1;
+                    opacity: 0.6;
+                    background-color: lightblue;
+                    position: absolute;
+                    content: "";
+                }
+            }
+            .column.wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                flex-wrap: wrap;
+                @media screen and (min-width: $mobilelandscapewidth){
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    flex-wrap: nowrap;
+                }
+                .column-1, .column-2, .column-3 {
+                    width: 100%;
+                    @media screen and (min-width: $mobilelandscapewidth){
+                        width: 25%;
+                    }
+                    header {
+                        h2 {
+                            padding-top: 0;
+                            font-size: 24px;
+                            text-transform: uppercase;
+                        }
+                    }
+                    .copy {
+                        font-weight: 500;
+                        font-size: 18px;
+                        padding-bottom: $margin-medium;
+                    }
+                    .button {
+                        margin: 0 auto 0 0;
+                        position: relative;
+                        padding: 5%;
+                        text-align: center;
+                        text-transform: uppercase;
+                        border-radius: 10px;
+                        border: 2px solid $color__pdra-dark-blue;
+                        color: $color__pdra-dark-blue;
+                        font-size: 15px;
+                        font-weight: 600;
+                        display: inline-block;
+                    }
+                }
             }
         }
     }
@@ -153,25 +242,5 @@ article {
     }
     .row-3 {
         /* see row join */
-    }
-}
-/*standard template for sub-nav header*/
-.standard-sub-nav {
-    header {
-        h1 {
-        }
-    }
-    ul.sub-menu {
-        li {
-        }
-    }
-}
-/*standard template for row-join */
-.row-join {
-    .column-1 {
-    }
-    .column-2 {
-        .button {
-        }
     }
 }

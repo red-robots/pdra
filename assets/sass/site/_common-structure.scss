@@ -5,12 +5,6 @@ div {
 	word-wrap: break-word;
 	/* Instead use this non-standard one: */
 	word-break: break-word;
-
-	/* Adds a hyphen where the word breaks, if supported (No Blink) */
-	-ms-hyphens: auto;
-	-moz-hyphens: auto;
-	-webkit-hyphens: auto;
-	hyphens: auto;
 }
 .clear {clear: both;}
 .clear-bottom {
@@ -24,6 +18,29 @@ div {
 	width: 100%;
 	margin: 0px auto;
 }
+a.surrounding {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+    padding: $margin-medium 0;
+    margin: 0;
+    font-weight: 600;
+}
+h1 {
+    font-size: $font__size-large;
+}
+h2 {
+    font-size: $font__size-medium-large;
+}
+h3 {
+    font-size: $font__size-medium;
+}
+
 
 #masthead {
     padding: $margin-medium $margin-large;
@@ -88,6 +105,7 @@ div {
                         z-index: 2;
                         margin: 0;
                         padding: $margin-small;
+                        background-color: white;
                         li {
                             list-style-type: none;
                             padding: 0;
@@ -104,14 +122,30 @@ div {
 #colophon {
     background-color: $color__pdra-teal;
     padding: $margin-medium $margin-large;
+    font-weight: 500;
+    font-size: $font__size-medium-large;
     @media screen and (min-width: $mobilelandscapewidth){
-        padding: $margin-standard-vertical-full-width-large $margin-standard-horizontal-full-width $margin-standard-vertical-full-width-medium $margin-standard-horizontal-full-width;
+        padding: $margin-standard-vertical-full-width-large $margin-standard-footer-full-width $margin-standard-vertical-full-width-medium $margin-standard-footer-full-width;
     }
     .column-1 {
-        text-align: left;
+        text-align: center;
+        @media screen and (min-width: $mobilelandscapewidth){
+            text-align: left;
+        }
+        ul li {
+            &:last-child {
+                padding-bottom: $margin-medium;
+                @media screen and (min-width: $mobilelandscapewidth){
+                    padding-bottom: 0;
+                }
+            }
+        }
     }
     .column-2 {
-        text-align: right;
+        text-align: center;
+        @media screen and (min-width: $mobilelandscapewidth){
+            text-align: right;
+        }
     }
     .column-1, .column-2 {
         padding: 0;
@@ -165,6 +199,12 @@ div {
             flex-wrap: nowrap;
         }
         .column-1 {
+            .email {
+                padding-bottom: $margin-medium;
+                @media screen and (min-width: $mobilelandscapewidth){
+                    padding-bottom: 0;
+                }
+            }
         }
         .column-2 {
             ul {
@@ -187,6 +227,59 @@ div {
                     }
                 }
             }
+        }
+    }
+}
+/*standard template for sub-nav header*/
+.standard-sub-nav {
+    header {
+        h1 {
+        }
+    }
+    ul.sub-menu {
+        li {
+        }
+    }
+}
+/*standard template for row-join */
+.row-join {
+    background-color: $color__pdra-dark-blue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: $margin-medium $margin-large;
+    @media screen and (min-width: $mobilelandscapewidth){
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        padding: $margin-standard-vertical-full-width-medium-large $margin-standard-horizontal-full-width;
+    }
+    .column-1 {
+        width: 100%;
+        font-size: $font__size-medium-large;
+        @media screen and (min-width: $mobilelandscapewidth){
+            width: 60%;
+            font-size: $font__size-large;
+        }
+    }
+    .column-2 {
+        width: 207px;
+        font-size: $font__size-medium-large;
+        @media screen and (min-width: $mobilelandscapewidth){
+            width: 27%;
+            font-size: $font__size-large;
+            min-width: 227px;
+        }
+        .button {
+            position: relative;
+            width: 100%;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 12% 0;
+            border: 2px solid white;
+            border-radius: 10px;
         }
     }
 }

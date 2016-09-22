@@ -20,24 +20,8 @@ get_header(); ?>
 		<?php
         $post = get_post(51);
         setup_postdata($post);
-        
-		if ( have_posts() ) : the_post();
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-
-			<?php
-			endif;
-
-            get_template_part( 'template-parts/content', 'index');
-				
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
+            get_template_part( 'template-parts/content', 'index');?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
