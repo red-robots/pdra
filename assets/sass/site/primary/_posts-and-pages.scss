@@ -105,6 +105,27 @@ article {
                         display: inline-block;
                     }
                 }
+                .column-3 {
+                    .copy {
+                        .event {
+                            font-size: $font__size-medium;
+                            &:after {
+                                content: "";
+                                display: block;
+                                clear: both;
+                            }
+                            .date {
+                                float: left;
+                                width: 30%;
+                            }
+                            .title {
+                                color: $color__pdra-dark-blue;
+                                float: right;
+                                width: 70%;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

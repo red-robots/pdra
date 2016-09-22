@@ -1436,6 +1436,10 @@ article#post-51 .row-3 .column.wrapper{display:-webkit-box;display:-webkit-flex;
 }article#post-51 .row-3 .column.wrapper .column-1 header h2,article#post-51 .row-3 .column.wrapper .column-2 header h2,article#post-51 .row-3 .column.wrapper .column-3 header h2{padding-top:0;font-size:24px;text-transform:uppercase}
 article#post-51 .row-3 .column.wrapper .column-1 .copy,article#post-51 .row-3 .column.wrapper .column-2 .copy,article#post-51 .row-3 .column.wrapper .column-3 .copy{font-weight:500;font-size:18px;padding-bottom:20px}
 article#post-51 .row-3 .column.wrapper .column-1 .button,article#post-51 .row-3 .column.wrapper .column-2 .button,article#post-51 .row-3 .column.wrapper .column-3 .button{margin:0 auto 0 0;position:relative;padding:5%;text-align:center;text-transform:uppercase;border-radius:10px;border:2px solid #402c7c;color:#402c7c;font-size:15px;font-weight:600;display:inline-block}
+article#post-51 .row-3 .column.wrapper .column-3 .copy .event{font-size:16px}
+article#post-51 .row-3 .column.wrapper .column-3 .copy .event:after{content:"";display:block;clear:both}
+article#post-51 .row-3 .column.wrapper .column-3 .copy .event .date{float:left;width:30%}
+article#post-51 .row-3 .column.wrapper .column-3 .copy .event .title{color:#402c7c;float:right;width:70%}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
