@@ -232,12 +232,64 @@ h3 {
 }
 /*standard template for sub-nav header*/
 .standard-sub-nav {
+    position: relative;
+    padding: $margin-medium $margin-large;
+    @media screen and (min-width: $mobilelandscapewidth){
+        padding: $margin-standard-vertical-full-width-small $margin-standard-horizontal-full-width;
+    }
     header {
+        width: 100%;
+        text-align: center;
         h1 {
+            text-transform: uppercase;
+            color: $color__pdra-dark-blue;
+            font-size: 27px;
+            padding: 0;
         }
     }
     ul.sub-menu {
+        margin: 0;
+        padding: 0;
+        text-align: center;
         li {
+            display: inline-block;
+            padding: 0 0 0 $margin-medium;
+            margin: 0;
+            opacity: 0.5;
+            list-style-type: none;
+            &:first-child {
+                padding: 0;
+            }
+            &.current-menu-item {
+                opacity: 1;
+            }
+            a {
+                text-decoration: none;
+                color: $color__pdra-dark-blue;
+                font-size: 27px;
+            }
+        }
+    } 
+    .background-image {
+        display: block;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-size: cover;
+        width: 100%;
+        z-index: -2;
+        position: absolute;
+        &:before {
+            display: block;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            opacity: 0.6;
+            background-color: lightblue;
+            position: absolute;
+            content: "";
         }
     }
 }

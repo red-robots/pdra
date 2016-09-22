@@ -249,19 +249,28 @@ article {
             }
         }
     }
-    /* page template */
-    .row-1 {
-        /* see standard sub nav */
-    }
-    .row-2 {
-        header {
-            h1 {
+    &.template-page {/* page template */
+        .row-1 {
+            /* see standard sub nav */
+        }
+        .row-2 {
+            padding: 4% 18%;
+            header {
+                width: 30%;
+                text-align: center;
+                border-bottom: 2px solid $color__pdra-dark-blue;
+                margin: 0 auto;
+                h1 {
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    padding: 0;
+                }
+            }
+            .copy {
             }
         }
-        .copy {
+        .row-3 {
+            /* see row join */
         }
-    }
-    .row-3 {
-        /* see row join */
     }
 }

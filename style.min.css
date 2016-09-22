@@ -1412,6 +1412,17 @@ h3{font-size:16px}
 }#colophon .row-2 .column-2 ul li{float:left}
 #colophon .row-2 .column-2 ul li:first-child a:before{display:none}
 #colophon .row-2 .column-2 ul li a:before{content:"";border-right:2px solid white;height:15px;margin:0 8px;display:inline-block;vertical-align:middle}
+.standard-sub-nav{position:relative;padding:20px 30px}
+@media screen and (min-width:600px){.standard-sub-nav{padding:3% 10%}
+}.standard-sub-nav header{width:100%;text-align:center}
+.standard-sub-nav header h1{text-transform:uppercase;color:#402c7c;font-size:27px;padding:0}
+.standard-sub-nav ul.sub-menu{margin:0;padding:0;text-align:center}
+.standard-sub-nav ul.sub-menu li{display:inline-block;padding:0 0 0 20px;margin:0;opacity:.5;list-style-type:none}
+.standard-sub-nav ul.sub-menu li:first-child{padding:0}
+.standard-sub-nav ul.sub-menu li.current-menu-item{opacity:1}
+.standard-sub-nav ul.sub-menu li a{text-decoration:none;color:#402c7c;font-size:27px}
+.standard-sub-nav .background-image{display:block;top:0;left:0;height:100%;background-size:cover;width:100%;z-index:-2;position:absolute}
+.standard-sub-nav .background-image:before{display:block;top:0;left:0;height:100%;width:100%;z-index:1;opacity:.6;background-color:lightblue;position:absolute;content:""}
 .row-join{background-color:#402c7c;color:white;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;padding:20px 30px}
 @media screen and (min-width:600px){.row-join{-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;padding:5% 10%}
 }.row-join .column-1{width:100%;font-size:20px}
@@ -1440,6 +1451,9 @@ article#post-51 .row-3 .column.wrapper .column-3 .copy .event{font-size:16px}
 article#post-51 .row-3 .column.wrapper .column-3 .copy .event:after{content:"";display:block;clear:both}
 article#post-51 .row-3 .column.wrapper .column-3 .copy .event .date{float:left;width:30%}
 article#post-51 .row-3 .column.wrapper .column-3 .copy .event .title{color:#402c7c;float:right;width:70%}
+article.template-page .row-2{padding:4% 18%}
+article.template-page .row-2 header{width:30%;text-align:center;border-bottom:2px solid #402c7c;margin:0 auto}
+article.template-page .row-2 header h1{font-size:24px;text-transform:uppercase;padding:0}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
