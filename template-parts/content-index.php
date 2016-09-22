@@ -70,14 +70,22 @@
                         <h2><?php echo get_the_title();?></h2>
                     </header>
                     <div class="copy">
-                        <?php $the_content = get_the_content();
-                        if(strlen($the_content)<=200):
-                            echo $the_content;
-                        else: 
-                            echo substr($the_content,0,200)."...";
+                       <?php $args = array('post_type'=>'event','posts_per_page'=>3,'order'=>'ASC');
+                       $query = new WP_Query($args);
+                       if(have_posts()):
+                            while(have_posts()):the_post();?>
+                                <div class="event">
+                                    <div class="date">
+                                    <?php ?>
+                                    -</div><!--.date-->
+                                    <div class="title">
+                                        <?php the_title();?>
+                                    </div><!--.title-->
+                                </div><!--.event-->
+                            <?php endwhile;
                         endif;?>
                     </div><!--.copy-->
-                    <?php $the_permalink = get_the_permalink();
+                    <?php $the_permalink = get_the_permalink(53);
                     $post = get_post(51);
                     setup_postdata($post);
                     if(get_field("box_#2_button_text")):?>
