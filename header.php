@@ -31,6 +31,9 @@
         </div><!--.logo.wrapper-->
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			<?php if(get_field("facebook_link","option")):?>
+                <i class="fa fa-facebook"><a class="surrounding" target="_blank" href="<?php echo get_field("facebook_link","option");?>"></a></i>
+            <?php endif;?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
