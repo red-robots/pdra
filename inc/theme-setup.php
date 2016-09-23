@@ -79,7 +79,7 @@ add_action( 'after_setup_theme', 'acstarter_setup' );
   /*
    * Custom image size for gallery
    */
-   add_image_size("gallery",600,500,array('center','center'));
+   add_image_size("gallery",600,400,array('center','center'));
    
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class("template-leadership"); ?>>
     <section class="row-1 standard-sub-nav">
 		<?php $matches = array();
 		$title = false;
@@ -45,34 +45,38 @@
         $query = new WP_Query($args);
         $count = $query->post_count;
         $row =0;
-        for($i=0;$i<$count;$i++):
-            $query->the_post();?>
-            <div class="officer js-blocks count-<?php echo $i%3;?> row-<?php echo $row;?>">
-                <?php $image = get_field('image');
-                if(!empty($image)):?>
-                    <img src="<?php echo wp_get_attachment_image_src($image,"full")[0];?>" alt="<?php echo get_post($image)!==null?get_post($image)->post_title:"";?>">
-                <?php endif;?>
-                <div class="title">
-                    <span class="name"><?php the_title();?></span>
-                    <?php if(get_field("position")):?>
-                        <span class="position"> - <?php echo get_field("position");?></span>
-                    <?php endif;?>
-                </div><!--.title-->
-                <?php $term = get_field('term');
-                if(!empty($term)):?>
-                    <div class="term"><?php echo $term;?></div><!--.term-->
-                <?php endif;?>
-                <?php $tel = get_field('tel');
-                if(!empty($tel)):?>
-                    <div class="tel"><?php echo $tel;?></div><!--.tel-->
-                <?php endif;?>
-                <?php $email = get_field('email');
-                if(!empty($email)):?>
-                    <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="<?php echo $email;?>"></a></div><!--.email-->
-                <?php endif;?>
-            </div><!--.officer-->
-            <?php if($i%3===2){$row++;}?>
-        <?php endfor;?>
+        if($count>0):?>
+            <div class="officer wrapper">
+                <?php for($i=0;$i<$count;$i++):
+                    $query->the_post();?>
+                    <div class="officer js-blocks count-<?php echo $i%3;?> row-<?php echo $row;?>">
+                        <?php $image = get_field('image');
+                        if(!empty($image)):?>
+                            <img src="<?php echo wp_get_attachment_image_src($image,"full")[0];?>" alt="<?php echo get_post($image)!==null?get_post($image)->post_title:"";?>">
+                        <?php endif;?>
+                        <div class="title">
+                            <span class="name"><?php the_title();?></span>
+                            <?php if(get_field("position")):?>
+                                <span class="position"> - <?php echo get_field("position");?></span>
+                            <?php endif;?>
+                        </div><!--.title-->
+                        <?php $term = get_field('term');
+                        if(!empty($term)):?>
+                            <div class="term"><?php echo $term;?></div><!--.term-->
+                        <?php endif;?>
+                        <?php $tel = get_field('tel');
+                        if(!empty($tel)):?>
+                            <div class="tel"><?php echo $tel;?></div><!--.tel-->
+                        <?php endif;?>
+                        <?php $email = get_field('email');
+                        if(!empty($email)):?>
+                            <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="<?php echo $email;?>"></a></div><!--.email-->
+                        <?php endif;?>
+                    </div><!--.officer-->
+                    <?php if($i%3===2){$row++;}?>
+                <?php endfor;?>
+            </div><!--.officer.wrapper-->
+        <?php endif;//if for count?>
 	</section><!--.row-3-->
 	<section class="row-4">
         <header><h2><?php if(get_field("board_title"))echo get_field("board_title");else echo "Board of Directors";?></h2></header>
@@ -88,29 +92,33 @@
             $query = new WP_Query($args);
             $count = $query->post_count;
             $row = 0;
-            for($i=0;$i<$count;$i++):
-                $query->the_post();?>
-                <div class="board-north js-blocks count-<?php echo $i%3;?> row-<?php echo $row;?>">
-                    <?php $image = get_field('image');
-                    if(!empty($image)):?>
-                        <img src="<?php echo wp_get_attachment_image_src($image,"full")[0];?>" alt="<?php echo get_post($image)!==null?get_post($image)->post_title:"";?>">
-                    <?php endif;?>
-                    <div class="title"><?php the_title();?></div><!--.title-->
-                    <?php $term = get_field('term');
-                    if(!empty($term)):?>
-                        <div class="term"><?php echo $term;?></div><!--.term-->
-                    <?php endif;?>
-                    <?php $tel = get_field('tel');
-                    if(!empty($tel)):?>
-                        <div class="tel"><?php echo $tel;?></div><!--.tel-->
-                    <?php endif;?>
-                    <?php $email = get_field('email');
-                    if(!empty($email)):?>
-                        <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="<?php echo $email;?>"></a></div><!--.email-->
-                    <?php endif;?>
-                </div><!--.board-north-->
-                <?php if($i%3===2){$row++;}?>
-            <?php endfor;?>
+            if($count>0):?>
+                <div class="board-north wrapper">
+                    <?php for($i=0;$i<$count;$i++):
+                        $query->the_post();?>
+                        <div class="board-north js-blocks count-<?php echo $i%3;?> row-<?php echo $row;?>">
+                            <?php $image = get_field('image');
+                            if(!empty($image)):?>
+                                <img src="<?php echo wp_get_attachment_image_src($image,"full")[0];?>" alt="<?php echo get_post($image)!==null?get_post($image)->post_title:"";?>">
+                            <?php endif;?>
+                            <div class="title"><?php the_title();?></div><!--.title-->
+                            <?php $term = get_field('term');
+                            if(!empty($term)):?>
+                                <div class="term"><?php echo $term;?></div><!--.term-->
+                            <?php endif;?>
+                            <?php $tel = get_field('tel');
+                            if(!empty($tel)):?>
+                                <div class="tel"><?php echo $tel;?></div><!--.tel-->
+                            <?php endif;?>
+                            <?php $email = get_field('email');
+                            if(!empty($email)):?>
+                                <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="<?php echo $email;?>"></a></div><!--.email-->
+                            <?php endif;?>
+                        </div><!--.board-north-->
+                        <?php if($i%3===2){$row++;}?>
+                    <?php endfor;?>
+                </div><!--.board-north wrapper-->
+            <?php endif;//if for count?>
         </div><!--.north-district .wrapper-->
         <div class="central-district wrapper">
             <header><h3><?php if(get_field("board_central_title"))echo get_field("board_central_title");else echo "Central District";?></h3></header>
@@ -124,29 +132,33 @@
             $query = new WP_Query($args);
             $count = $query->post_count;
             $row = 0;
-            for($i=0;$i<$count;$i++):
-                $query->the_post();?>
-                <div class="board-central js-blocks count-<?php echo $i%3;?> row-<?php echo $row;?>">
-                    <?php $image = get_field('image');
-                    if(!empty($image)):?>
-                        <img src="<?php echo wp_get_attachment_image_src($image,"full")[0];?>" alt="<?php echo get_post($image)!==null?get_post($image)->post_title:"";?>">
-                    <?php endif;?>
-                    <div class="title"><?php the_title();?></div><!--.title-->
-                    <?php $term = get_field('term');
-                    if(!empty($term)):?>
-                        <div class="term"><?php echo $term;?></div><!--.term-->
-                    <?php endif;?>
-                    <?php $tel = get_field('tel');
-                    if(!empty($tel)):?>
-                        <div class="tel"><?php echo $tel;?></div><!--.tel-->
-                    <?php endif;?>
-                    <?php $email = get_field('email');
-                    if(!empty($email)):?>
-                        <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="<?php echo $email;?>"></a></div><!--.email-->
-                    <?php endif;?>
-                </div><!--.board-central-->
-                <?php if($i%3===2){$row++;}?>
-            <?php endfor;?>
+            if($count>0):?>
+                <div class="board-central wrapper">
+                    <?php for($i=0;$i<$count;$i++):
+                        $query->the_post();?>
+                        <div class="board-central js-blocks count-<?php echo $i%3;?> row-<?php echo $row;?>">
+                            <?php $image = get_field('image');
+                            if(!empty($image)):?>
+                                <img src="<?php echo wp_get_attachment_image_src($image,"full")[0];?>" alt="<?php echo get_post($image)!==null?get_post($image)->post_title:"";?>">
+                            <?php endif;?>
+                            <div class="title"><?php the_title();?></div><!--.title-->
+                            <?php $term = get_field('term');
+                            if(!empty($term)):?>
+                                <div class="term"><?php echo $term;?></div><!--.term-->
+                            <?php endif;?>
+                            <?php $tel = get_field('tel');
+                            if(!empty($tel)):?>
+                                <div class="tel"><?php echo $tel;?></div><!--.tel-->
+                            <?php endif;?>
+                            <?php $email = get_field('email');
+                            if(!empty($email)):?>
+                                <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="<?php echo $email;?>"></a></div><!--.email-->
+                            <?php endif;?>
+                        </div><!--.board-central-->
+                        <?php if($i%3===2){$row++;}?>
+                    <?php endfor;?>
+                </div><!--.board-central .wrapper-->
+            <?php endif;//if for count?>
         </div><!--.central-district .wrapper-->
         <div class="south-district wrapper">
             <header><h3><?php if(get_field("board_south_title"))echo get_field("board_south_title");else echo "South District";?></h3></header>
@@ -160,29 +172,33 @@
             $query = new WP_Query($args);
             $count = $query->post_count;
             $row = 0;
-            for($i=0;$i<$count;$i++):
-                $query->the_post();?>
-                <div class="board-south js-blocks count-<?php echo $i%3;?> row-<?php echo $row;?>">
-                    <?php $image = get_field('image');
-                    if(!empty($image)):?>
-                        <img src="<?php echo wp_get_attachment_image_src($image,"full")[0];?>" alt="<?php echo get_post($image)!==null?get_post($image)->post_title:"";?>">
-                    <?php endif;?>
-                    <div class="title"><?php the_title();?></div><!--.title-->
-                    <?php $term = get_field('term');
-                    if(!empty($term)):?>
-                        <div class="term"><?php echo $term;?></div><!--.term-->
-                    <?php endif;?>
-                    <?php $tel = get_field('tel');
-                    if(!empty($tel)):?>
-                        <div class="tel"><?php echo $tel;?></div><!--.tel-->
-                    <?php endif;?>
-                    <?php $email = get_field('email');
-                    if(!empty($email)):?>
-                        <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="<?php echo $email;?>"></a></div><!--.email-->
-                    <?php endif;?>
-                </div><!--.board-south-->
-                <?php if($i%3===2){$row++;}?>
-            <?php endfor;?>
+            if($count>0):?>
+                <div class="board-south wrapper">
+                    <?php for($i=0;$i<$count;$i++):
+                        $query->the_post();?>
+                        <div class="board-south js-blocks count-<?php echo $i%3;?> row-<?php echo $row;?>">
+                            <?php $image = get_field('image');
+                            if(!empty($image)):?>
+                                <img src="<?php echo wp_get_attachment_image_src($image,"full")[0];?>" alt="<?php echo get_post($image)!==null?get_post($image)->post_title:"";?>">
+                            <?php endif;?>
+                            <div class="title"><?php the_title();?></div><!--.title-->
+                            <?php $term = get_field('term');
+                            if(!empty($term)):?>
+                                <div class="term"><?php echo $term;?></div><!--.term-->
+                            <?php endif;?>
+                            <?php $tel = get_field('tel');
+                            if(!empty($tel)):?>
+                                <div class="tel"><?php echo $tel;?></div><!--.tel-->
+                            <?php endif;?>
+                            <?php $email = get_field('email');
+                            if(!empty($email)):?>
+                                <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="<?php echo $email;?>"></a></div><!--.email-->
+                            <?php endif;?>
+                        </div><!--.board-south-->
+                        <?php if($i%3===2){$row++;}?>
+                    <?php endfor;?>
+                </div><!--.board-south .wrapper-->
+            <?php endif;//if for count?>
         </div><!--.south-district .wrapper-->
 	</section><!--.row-4-->
 	<section class="row-5">
@@ -212,29 +228,33 @@
         $query = new WP_Query($args);
         $count = $query->post_count;
         $row = 0;
-        for($i=0;$i<$count;$i++):
-            $query->the_post();?>
-            <div class="manager js-blocks count-<?php echo $i%3;?> row-<?php echo $row;?>">
-                <?php $image = get_field('image');
-                if(!empty($image)):?>
-                    <img src="<?php echo wp_get_attachment_image_src($image,"full")[0];?>" alt="<?php echo get_post($image)!==null?get_post($image)->post_title:"";?>">
-                <?php endif;?>
-                <div class="title"><?php the_title();?></div><!--.title-->
-                <?php $term = get_field('term');
-                if(!empty($term)):?>
-                    <div class="term"><?php echo $term;?></div><!--.term-->
-                <?php endif;?>
-                <?php $tel = get_field('tel');
-                if(!empty($tel)):?>
-                    <div class="tel"><?php echo $tel;?></div><!--.tel-->
-                <?php endif;?>
-                <?php $email = get_field('email');
-                if(!empty($email)):?>
-                    <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="<?php echo $email;?>"></a></div><!--.email-->
-                <?php endif;?>
-            </div><!--.manager-->
-            <?php if($i%3===2){$row++;}?>
-        <?php endfor;?>
+        if($count>0):?>
+            <div class="manager wrapper">
+                <?php for($i=0;$i<$count;$i++):
+                    $query->the_post();?>
+                    <div class="manager js-blocks count-<?php echo $i%3;?> row-<?php echo $row;?>">
+                        <?php $image = get_field('image');
+                        if(!empty($image)):?>
+                            <img src="<?php echo wp_get_attachment_image_src($image,"full")[0];?>" alt="<?php echo get_post($image)!==null?get_post($image)->post_title:"";?>">
+                        <?php endif;?>
+                        <div class="title"><?php the_title();?></div><!--.title-->
+                        <?php $term = get_field('term');
+                        if(!empty($term)):?>
+                            <div class="term"><?php echo $term;?></div><!--.term-->
+                        <?php endif;?>
+                        <?php $tel = get_field('tel');
+                        if(!empty($tel)):?>
+                            <div class="tel"><?php echo $tel;?></div><!--.tel-->
+                        <?php endif;?>
+                        <?php $email = get_field('email');
+                        if(!empty($email)):?>
+                            <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="<?php echo $email;?>"></a></div><!--.email-->
+                        <?php endif;?>
+                    </div><!--.manager-->
+                    <?php if($i%3===2){$row++;}?>
+                <?php endfor;?>
+            </div><!--.manager .wrapper-->
+        <?php endif; //if for count?>
 	</section><!--.row-5-->
 	<section class="row-6">
         <header><h2><?php if(get_field("trustees_title"))echo get_field("trustees_title");else echo "Board of Trustees";?></h2></header>
@@ -248,16 +268,20 @@
         $query = new WP_Query($args);
         $count = $query->post_count;
         $row = 0;
-        for($i=0;$i<$count;$i++):
-            $query->the_post();?>
-            <div class="trustee js-blocks count-<?php echo $i%3;?> row-<?php echo $row;?>">
-                    <div class="name"><?php the_title();?></div><!--.name-->
-                <?php $location = get_field("location");
-                if(!empty($location)):?>
-                    <div class="location"><?php echo $location;?></div><!--.location-->
-                <?php endif;?>
-            </div><!--.trustee-->
-            <?php if($i%3===2){$row++;}?>
-        <?php endfor;?>
+        if($count>0):?>
+            <div class="trustee wrapper">
+                <?php for($i=0;$i<$count;$i++):
+                    $query->the_post();?>
+                    <div class="trustee js-blocks count-<?php echo $i%3;?> row-<?php echo $row;?>">
+                            <div class="name"><?php the_title();?></div><!--.name-->
+                        <?php $location = get_field("location");
+                        if(!empty($location)):?>
+                            <div class="location"><?php echo $location;?></div><!--.location-->
+                        <?php endif;?>
+                    </div><!--.trustee-->
+                    <?php if($i%3===2){$row++;}?>
+                <?php endfor;?>
+            </div><!--.trustee .wrapper-->
+        <?php endif;//if for count?>
 	</section><!--.row-6-->
 </article><!-- #post-## -->

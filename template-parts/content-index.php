@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class("template-index"); ?>>
 	<section class="row-1">
         <?php if(get_field("row_1_image")):?>
             <img class="full-width" src="<?php echo wp_get_attachment_image_src(get_field("row_1_image"),"full")[0];?>" alt="<?php echo get_post(get_field("row_1_image"))!==null?get_post(get_field("row_1_image"))->post_title:"";?>">

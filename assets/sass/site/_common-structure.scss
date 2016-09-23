@@ -39,6 +39,11 @@ h2 {
 }
 h3 {
     font-size: 17px;
+    color: $color__pdra-dark-blue;
+}
+.copy {
+    font-weight: 500;
+    font-size: 18px;
 }
 
 
@@ -255,18 +260,18 @@ h3 {
             display: inline-block;
             padding: 0 0 0 $margin-medium;
             margin: 0;
-            opacity: 0.5;
             list-style-type: none;
             &:first-child {
                 padding: 0;
             }
-            &.current-menu-item {
-                opacity: 1;
-            }
             a {
+                opacity: 0.5;
                 text-decoration: none;
                 color: $color__pdra-dark-blue;
                 font-size: 27px;
+                &.active {
+                    opacity: 1;
+                }
             }
         }
     } 

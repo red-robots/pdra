@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content' );
+			get_template_part( 'template-parts/content','page' );
 
 		endif; // End of the loop.
 		?>
@@ -24,5 +24,4 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
