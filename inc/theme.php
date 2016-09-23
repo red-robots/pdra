@@ -36,6 +36,10 @@ function mytheme_favicon() {
 } 
 add_action('wp_head', 'mytheme_favicon');
 
+function mytheme_font_awesome() {
+ echo '<script src="https://use.fontawesome.com/4945cee666.js"></script>';
+}
+add_action('wp_head', 'mytheme_font_awesome');
 /*-------------------------------------
 	Adds Options page for ACF.
 ---------------------------------------*/

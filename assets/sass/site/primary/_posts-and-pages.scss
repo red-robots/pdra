@@ -200,10 +200,11 @@ article {
             .officer, .board-north, .board-central, .board-south, .manager {
                 float: left;
                 width: 40%;
-                margin: 0 0 0 10%;
+                margin: 10px 0 0 10%;
+                font-size: 18px;
                 @media screen and (min-width: $mobilelandscapewidth){
                     width: 30%;
-                    margin: 0 0 0 5%;
+                    margin: 20px 0 0 5%;
                     &.count-0 {
                         clear: left;
                     }
@@ -211,18 +212,41 @@ article {
                         clear: right;
                     }
                 }
+                &.row-0 {
+                    margin-top: 0;
+                }
                 &.count-0 {
-                    margin: 0;
+                    margin-left: 0;
                 }
                 img {
+                    width: 100%;
+                    display: block;
+                    margin: 0 0 15px 0;
                 }
                 .title {
+                    font-weight: 500;
+                    margin: 0;
+                    line-height: 1.4;
+                    .name {
+                        text-transform: uppercase;
+                    }
+                    .position {
+                    }
                 }
                 .term {
+                    margin: 0 0 $margin-medium 0;
+                    line-height: 1.4;
                 }
                 .tel {
+                    margin: 0;
+                    line-height: 1.4;
                 }
                 .email {
+                    color: $color__pdra-dark-blue;
+                    font-size: 24px;
+                    display: inline-block;
+                    position: relative;
+                    margin: 0 auto 0 0;
                 }
             }
         }
@@ -240,7 +264,7 @@ article {
                 width: 30%;
                 text-align: left;
                 border-bottom: 2px solid $color__pdra-dark-blue;
-                margin: 30px auto 5px 0;
+                margin: 30px auto 30px 0;
                 h2 {
                     font-size: 24px;
                     text-transform: uppercase;
@@ -250,10 +274,11 @@ article {
             .trustee { 
                 float: left;
                 width: 40%;
-                margin: 0 0 0 10%;
+                margin: 20px 0 0 10%;
+                font-size: 18px;
                 @media screen and (min-width: $mobilelandscapewidth){
                     width: 30%;
-                    margin: 0 0 0 5%;
+                    margin: 40px 0 0 5%;
                     &.count-0 {
                         clear: left;
                     }
@@ -261,10 +286,15 @@ article {
                         clear: right;
                     }
                 }
+                &.row-0 {
+                    margin-top: 0;
+                }
                 &.count-0 {
-                    margin: 0;
+                    margin-left: 0;
                 }
                 .name {
+                    text-transform: uppercase;
+                    font-weight: 500;
                 }
                 .location {
                 }
