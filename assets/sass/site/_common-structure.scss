@@ -376,3 +376,23 @@ p {
         }
     }
 }
+.row-minutes {
+    padding: $margin-medium $margin-large;
+    @media screen and (min-width: $mobilelandscapewidth){
+        padding: $margin-standard-vertical-full-width-medium $margin-standard-vertical-full-width-extra-large;
+    }
+    header {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 $margin-small 0;
+        h2 {    
+            border-bottom: 2px solid $color__pdra-dark-blue;
+            margin: 0 auto;
+            display: inline-block;
+            font-size: 24px;
+            text-transform: uppercase;
+            padding: 0 $margin-medium;
+            min-width: 40%;
+        }
+    }
+}
