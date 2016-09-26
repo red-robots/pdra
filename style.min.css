@@ -735,16 +735,17 @@ h3{font-size:17px;color:#402c7c}
 .copy ul{padding:0;margin:0}
 .copy ul li{margin:0 0 0 20px;font-size:18px;padding:0}
 p{margin:20px 0}
-#masthead{padding:20px 30px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}
-@media screen and (min-width:600px){#masthead{padding:20px 6%;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap}
-}#masthead .logo.wrapper{width:70%}
+#masthead{padding:20px 30px;position:relative}
+@media screen and (min-width:600px){#masthead{padding:20px 6%}
+}#masthead .logo.wrapper{width:70%;margin:0 auto}
 @media screen and (min-width:600px){#masthead .logo.wrapper{width:15%;float:left}
 }#masthead .logo.wrapper .logo{width:100%}
 #masthead #site-navigation{width:100%}
-@media screen and (min-width:600px){#masthead #site-navigation{width:75%}
+@media screen and (min-width:600px){#masthead #site-navigation{width:75%;float:right}
 }#masthead #site-navigation:after{clear:both;display:block;content:""}
-#masthead #site-navigation .menu-main-menu-container{width:97%;float:left}
-#masthead #site-navigation .menu-main-menu-container #primary-menu{margin:0;padding:0;text-align:center}
+#masthead #site-navigation .menu-main-menu-container{width:97%;float:left;display:none}
+@media screen and (min-width:600px){#masthead #site-navigation .menu-main-menu-container{display:block}
+}#masthead #site-navigation .menu-main-menu-container #primary-menu{margin:0;padding:0;text-align:center}
 #masthead #site-navigation .menu-main-menu-container #primary-menu li{font-size:16px}
 #masthead #site-navigation .menu-main-menu-container #primary-menu>li{float:none;display:inline-block;padding:0 0 0 40px;position:relative}
 #masthead #site-navigation .menu-main-menu-container #primary-menu>li:first-child{padding:0}
@@ -754,6 +755,13 @@ p{margin:20px 0}
 #masthead #site-navigation .menu-main-menu-container #primary-menu>li .sub-menu{width:250px;text-align:left;box-shadow:0 3px 3px rgba(0,0,0,0.2);float:left;position:absolute;top:1.5em;left:-999em;z-index:2;margin:0;padding:10px;background-color:white}
 #masthead #site-navigation .menu-main-menu-container #primary-menu>li .sub-menu li{list-style-type:none;padding:0;margin:0}
 #masthead #site-navigation .fa-facebook{float:right;text-align:center;font-size:20px;line-height:1.2;position:relative;width:3%}
+#masthead #site-navigation .fa-bars{width:3%;float:right;font-size:20px;line-height:1.2;padding:0 0 0 10px}
+@media screen and (min-width:600px){#masthead #site-navigation .fa-bars{display:none}
+}#masthead .mobile-menu{width:80%;position:absolute;padding:20px;right:-100%;top:0;z-index:2;background-color:white;color:black}
+@media screen and (min-width:600px){#masthead .mobile-menu{display:none}
+}#masthead .mobile-menu .fa-bars{width:100%;font-size:20px;line-height:1.2;padding:0 0 10px 0}
+#masthead .mobile-menu ul{margin:0;padding:0}
+#masthead .mobile-menu ul li{margin:0 0 0 20px;padding:0}
 #colophon{background-color:#589998;padding:20px 30px;font-weight:500;font-size:20px}
 @media screen and (min-width:600px){#colophon{padding:8% 8% 4% 8%}
 }#colophon .column-1{text-align:center}

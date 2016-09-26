@@ -88,5 +88,24 @@ jQuery(document).ready(function ($) {
 	*
 	------------------------------------*/
 	new WOW().init();
+    
+    /*-----------------------------------
+	 * Custom mobile navigation
+	 ------------------------------------*/
+	//if hamburger clicked move menu into view
+	$('#site-navigation > .fa-bars')
+	.on('click',function(){
+		$('.mobile-menu').animate({
+			"right": 0,
+		});
+	});
+	//if hamburger clicked on menu move back out of view
+	$('.mobile-menu > .fa-bars')
+	.on('click',function(){
+		var $nav = $('.mobile-menu');
+		$nav.animate({
+			"right": 100*(-1*$nav.outerWidth()/$(window).width())-2+"%",
+		});
+	});
 
 });// END #####################################    END
