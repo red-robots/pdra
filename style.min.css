@@ -730,6 +730,11 @@ h1{font-size:24px}
 h2{font-size:20px}
 h3{font-size:17px;color:#402c7c}
 .copy{font-weight:500;font-size:18px}
+.copy>*:first-child{margin-top:0}
+.copy>*:last-child{margin-bottom:0}
+.copy ul{padding:0;margin:0}
+.copy ul li{margin:0 0 0 20px;font-size:18px;padding:0}
+p{margin:20px 0}
 #masthead{padding:20px 30px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}
 @media screen and (min-width:600px){#masthead{padding:20px 6%;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap}
 }#masthead .logo.wrapper{width:70%}
@@ -955,6 +960,20 @@ article.template-quarry-landing .row-2 .quarry header h2{font-size:24px;text-tra
 article.template-quarry-landing .row-2 .quarry img{width:100%;display:block}
 article.template-quarry-landing .row-2 .quarry .address{width:100%;margin:0 0 10px 0;font-weight:600;font-size:18px}
 article.template-quarry-landing .row-2 .quarry .button{position:relative;margin:10px auto 0 0;padding:3% 8%;text-align:center;text-transform:uppercase;border-radius:10px;border:2px solid #402c7c;color:#402c7c;font-size:15px;font-weight:600;display:inline-block}
+article.template-sitemap .row-2{padding:20px 30px 20px 30px}
+@media screen and (min-width:600px){article.template-sitemap .row-2{padding:4% 18% 20px 18%}
+}article.template-sitemap .row-2 ul{padding:0;margin:0}
+article.template-sitemap .row-2 ul li{margin:0 0 0 20px;padding:0}
+article.template-sitemap .row-3{padding:0 30px 20px 30px}
+@media screen and (min-width:600px){article.template-sitemap .row-3{padding:0 18% 4% 18%}
+}article.template-sitemap .row-3.none-above{padding-top:20px}
+@media screen and (min-width:600px){article.template-sitemap .row-3.none-above{padding-top:4%}
+}article.template-sitemap .row-3 ul{padding:0;margin:0}
+article.template-sitemap .row-3 ul li{margin:0 0 0 20px;padding:0}
+.error-404 .row-2{padding:20px 30px}
+@media screen and (min-width:600px){.error-404 .row-2{padding:4% 18%}
+}.error-404 .row-2 ul{padding:0;margin:0}
+.error-404 .row-2 ul li{margin:0 0 0 20px;font-size:18px;padding:0}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

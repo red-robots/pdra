@@ -769,4 +769,63 @@ article {
             }
         }
     }
+    &.template-sitemap {
+        .row-1 {
+            /* see standard sub nav */
+        }
+        .row-2 {
+            padding: $margin-medium $margin-large $margin-medium $margin-large;
+            @media screen and (min-width: $mobilelandscapewidth){
+                padding: $margin-standard-vertical-full-width-medium $margin-standard-vertical-full-width-extra-large $margin-medium $margin-standard-vertical-full-width-extra-large;
+            }
+            ul {
+                padding: 0;
+                margin: 0;
+                li {
+                    margin: 0 0 0 $margin-medium;
+                    padding: 0;
+                }
+            }
+        }
+        .row-3 {
+            padding: 0 $margin-large $margin-medium $margin-large;
+            @media screen and (min-width: $mobilelandscapewidth){
+                padding: 0 $margin-standard-vertical-full-width-extra-large $margin-standard-vertical-full-width-medium $margin-standard-vertical-full-width-extra-large;
+            }
+            &.none-above {
+                 padding-top: $margin-medium;
+                @media screen and (min-width: $mobilelandscapewidth){
+                    padding-top: $margin-standard-vertical-full-width-medium;
+                }
+            }
+            ul {
+                padding: 0;
+                margin: 0;
+                li {
+                    margin: 0 0 0 $margin-medium;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+.error-404 {
+    .row-1 {
+        /* see standard sub nav */
+    }
+    .row-2 {
+        padding: $margin-medium $margin-large;
+        @media screen and (min-width: $mobilelandscapewidth){
+            padding: $margin-standard-vertical-full-width-medium $margin-standard-vertical-full-width-extra-large;
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+            li {
+                margin: 0 0 0 $margin-medium;
+                font-size: 18px;
+                padding: 0;
+            }
+        }
+    }
 }

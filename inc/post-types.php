@@ -99,6 +99,68 @@ function js_custom_init()
 	
   ); 
   register_post_type('event',$args); // name used in query
+  
+  $labels = array(
+	'name' => _x('General Assembly Minutes', 'post type general name'),
+    'singular_name' => _x('General Assembly Minutes', 'post type singular name'),
+    'add_new' => _x('Add New', 'General Assembly Minutes'),
+    'add_new_item' => __('Add New General Assembly Minutes'),
+    'edit_item' => __('Edit General Assembly Minutes'),
+    'new_item' => __('New General Assembly Minutes'),
+    'view_item' => __('View General Assembly Minutes'),
+    'search_items' => __('Search General Assembly Minutes'),
+    'not_found' =>  __('No General Assembly Minutes found'),
+    'not_found_in_trash' => __('No General Assembly Minutes found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'General Assembly Minutes'
+  );
+  $args = array(
+	'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => false, 
+    'hierarchical' => false, // 'false' acts like posts 'true' acts like pages
+    'menu_position' => 20,
+    'supports' => array('title','editor','custom-fields','thumbnail'),
+	
+  ); 
+  register_post_type('ga-minutes',$args); // name used in query
+  
+  $labels = array(
+	'name' => _x('Board of Director Minutes', 'post type general name'),
+    'singular_name' => _x('Board of Director Minutes', 'post type singular name'),
+    'add_new' => _x('Add New', 'Board of Director Minutes'),
+    'add_new_item' => __('Add New Board of Director Minutes'),
+    'edit_item' => __('Edit Board of Director Minutes'),
+    'new_item' => __('New Board of Director Minutes'),
+    'view_item' => __('View Board of Director Minutes'),
+    'search_items' => __('Search Board of Director Minutes'),
+    'not_found' =>  __('No Board of Director Minutes found'),
+    'not_found_in_trash' => __('No Board of Director Minutes found in Trash'), 
+    'parent_item_colon' => '',
+    'menu_name' => 'Board of Director Minutes'
+  );
+  $args = array(
+	'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'has_archive' => false, 
+    'hierarchical' => false, // 'false' acts like posts 'true' acts like pages
+    'menu_position' => 20,
+    'supports' => array('title','editor','custom-fields','thumbnail'),
+	
+  ); 
+  register_post_type('bod-minutes',$args); // name used in query
   // Add more between here
   
   // and here
