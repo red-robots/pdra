@@ -67,31 +67,35 @@ p {
 
 #masthead {
     padding: $margin-medium $margin-large;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
 	@media screen and (min-width: $mobilelandscapewidth){
         padding: $margin-medium $margin-standard-header-full-width;
+        justify-content: space-between;
+        flex-wrap: nowrap;
     }
     .logo.wrapper {
+        position: relative;
         width: 70%; 
-        margin: 0 auto;
+        margin: 0;
         @media screen and (min-width: $mobilelandscapewidth){
             width: 15%;
-            float: left;
         }
         .logo {
             width: 100%;
+            display: block;
         }
     }
     #site-navigation {
         width: 100%;
+        padding: $margin-medium 0 0 0;
+        text-align: center;
         @media screen and (min-width: $mobilelandscapewidth){
             width: 75%;
-            float: right;
-        }
-        &:after {
-            clear:both;
-            display: block;
-            content: "";
+            padding: 0;
         }
         .menu-main-menu-container {
             width: 97%;
@@ -151,16 +155,17 @@ p {
             }
         }
         .fa-facebook {
-            float: right;
             text-align: center;
             font-size: 20px;
             line-height: 1.2;
             position: relative;
             width: 3%;
+            @media screen and (min-width: $mobilelandscapewidth){
+                float: right;
+            }
         }
         .fa-bars {
-            width: 3%;
-            float: right;
+            width: 6%;
             font-size: 20px;
             line-height: 1.2;
             padding: 0 0 0 $margin-small;
@@ -169,6 +174,9 @@ p {
             }
         }
     }
+}
+#page {
+    position: relative;
     .mobile-menu {
         width: 80%;
         position: absolute;
