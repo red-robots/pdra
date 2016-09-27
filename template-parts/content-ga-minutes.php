@@ -39,7 +39,7 @@
                 <h2><?php echo get_field("ga_minutes_header_text","option");?></h2>
             </header>
         <?php endif;?>
-        <?php $date = date("Ymd");
+        <?php $date = intval(date("Ymd"))-20000;
         $args = array('post_type'=>'ga-minutes','order'=>'ASC','orderby'=>'menu_order','posts_per_page'=>-1,'meta_query'=>array(
             'relation'=>'AND',
                 array(
