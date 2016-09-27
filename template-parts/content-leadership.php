@@ -70,7 +70,7 @@
                         <?php endif;?>
                         <?php $email = get_field('email');
                         if(!empty($email)):?>
-                            <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="<?php echo $email;?>"></a></div><!--.email-->
+                            <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="mailto:<?php echo $email;?>"></a></div><!--.email-->
                         <?php endif;?>
                     </div><!--.officer-->
                     <?php if($i%3===2){$row++;}?>
@@ -112,7 +112,7 @@
                             <?php endif;?>
                             <?php $email = get_field('email');
                             if(!empty($email)):?>
-                                <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="<?php echo $email;?>"></a></div><!--.email-->
+                                <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="mailto:<?php echo $email;?>"></a></div><!--.email-->
                             <?php endif;?>
                         </div><!--.board-north-->
                         <?php if($i%3===2){$row++;}?>
@@ -152,7 +152,7 @@
                             <?php endif;?>
                             <?php $email = get_field('email');
                             if(!empty($email)):?>
-                                <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="<?php echo $email;?>"></a></div><!--.email-->
+                                <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="mailto:<?php echo $email;?>"></a></div><!--.email-->
                             <?php endif;?>
                         </div><!--.board-central-->
                         <?php if($i%3===2){$row++;}?>
@@ -192,7 +192,7 @@
                             <?php endif;?>
                             <?php $email = get_field('email');
                             if(!empty($email)):?>
-                                <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="<?php echo $email;?>"></a></div><!--.email-->
+                                <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="mailto:<?php echo $email;?>"></a></div><!--.email-->
                             <?php endif;?>
                         </div><!--.board-south-->
                         <?php if($i%3===2){$row++;}?>
@@ -248,7 +248,7 @@
                         <?php endif;?>
                         <?php $email = get_field('email');
                         if(!empty($email)):?>
-                            <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="<?php echo $email;?>"></a></div><!--.email-->
+                            <div class="email"><i class="fa fa-envelope"></i><a class="surrounding" target="_blank" href="mailto:<?php echo $email;?>"></a></div><!--.email-->
                         <?php endif;?>
                     </div><!--.manager-->
                     <?php if($i%3===2){$row++;}?>

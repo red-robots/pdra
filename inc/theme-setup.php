@@ -111,6 +111,7 @@ function acstarter_widgets_init() {
 }
 add_action( 'widgets_init', 'acstarter_widgets_init' );
 
+/* depreciated does not use preg match all
 function return_sub_menu($menu_string){
     $index = strpos($menu_string,"current-menu-item");
     if($index === -1)return -1;
@@ -170,20 +171,30 @@ function return_sub_menu($menu_string){
     }
     if($end_index===-1)return -1;
     return substr($menu_string,$start_index,$end_index-$start_index);
-}
+}*/
 function return_sub_menu_no_recursion($menu_string){
-    $index = strpos($menu_string,"current-menu-item");
+    $index_matched = preg_match_all('/.*?(<[^>]*current-menu-item[^>]*>).*?/i', $menu_string, $index_matches);
+    if($index_matched===0||$index_matched===false) return -1;
+    $index_match_string = -1;
+    for($i=0;$i<count($index_matches[1]);$i++){
+        if(preg_match('/.*?current-menu-ancestor.*/i', $index_matches[1][$i])===0){
+            $index_match_string=$index_matches[1][$i];
+            break;
+        }
+    }
+    if($index_match_string===-1)return -1;
+    $index = strpos($menu_string,$index_match_string);
     if($index === -1)return -1;
-    $start_matched = preg_match('/.*?(<\s*ul[^>]*sub-menu[^>]*>).*?/i', $menu_string, $start_matches);
-    $end_matched = preg_match('/.*?(<\s*\/\s*ul\s*>).*?/i', $menu_string, $end_matches);
-    if($start_matched!==1||$end_matched!==1) return -1;
+    $start_matched = preg_match_all('/.*?(<\s*ul[^>]*sub-menu[^>]*>).*?/i', $menu_string, $start_matches);
+    $end_matched = preg_match_all('/.*?(<\s*\/\s*ul\s*>).*?/i', $menu_string, $end_matches);
+    if(($start_matched===0||$start_matched===false)||($end_matched===0||$end_matched===false)) return -1;
     $saved_start_matches = $start_matches;
     $poss = array();
     $poss_items = array();
     $poss_length = array();
     $offset = -1;
-    for($j = 1;$j<count($saved_start_matches);$j++){
-        $match = $saved_start_matches[$j];
+    for($j = 0;$j<count($saved_start_matches[1]);$j++){
+        $match = $saved_start_matches[1][$j];
         do{
             $offset++;
             $offset = strpos($menu_string,$match,$offset);
@@ -195,8 +206,8 @@ function return_sub_menu_no_recursion($menu_string){
     }
     $saved_end_matches = $end_matches;
     $offset = -1;
-    for($j = 1;$j<count($saved_end_matches);$j++){
-        $match = $saved_end_matches[$j];
+    for($j = 0;$j<count($saved_end_matches[1]);$j++){
+        $match = $saved_end_matches[1][$j];
         do{
             $offset++;
             $offset = strpos($menu_string,$match,$offset);
