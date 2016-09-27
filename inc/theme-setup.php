@@ -173,20 +173,18 @@ function return_sub_menu($menu_string){
     return substr($menu_string,$start_index,$end_index-$start_index);
 }*/
 function return_sub_menu_no_recursion($menu_string){
-    $index_matched = preg_match_all('/.*?(<[^>]*current-menu-item[^>]*>).*?/i', $menu_string, $index_matches);
+    $index_matched = preg_match_all('/.*?(<[^>]*current-menu-item[^>]*>).*?/i', $menu_string, $index_matches,PREG_OFFSET_CAPTURE);
     if($index_matched===0||$index_matched===false) return -1;
-    $index_match_string = -1;
+    $index=-1;
     for($i=0;$i<count($index_matches[1]);$i++){
-        if(preg_match('/.*?current-menu-ancestor.*/i', $index_matches[1][$i])===0){
-            $index_match_string=$index_matches[1][$i];
+        if(preg_match('/.*?current-menu-ancestor.*/i', $index_matches[1][$i][0])===0){
+            $index=$index_matches[1][$i][1];
             break;
         }
     }
-    if($index_match_string===-1)return -1;
-    $index = strpos($menu_string,$index_match_string);
     if($index === -1)return -1;
-    $start_matched = preg_match_all('/.*?(<\s*ul[^>]*sub-menu[^>]*>).*?/i', $menu_string, $start_matches);
-    $end_matched = preg_match_all('/.*?(<\s*\/\s*ul\s*>).*?/i', $menu_string, $end_matches);
+    $start_matched = preg_match_all('/.*?(<\s*ul[^>]*sub-menu[^>]*>).*?/i', $menu_string, $start_matches,PREG_OFFSET_CAPTURE);
+    $end_matched = preg_match_all('/.*?(<\s*\/\s*ul\s*>).*?/i', $menu_string, $end_matches,PREG_OFFSET_CAPTURE);
     if(($start_matched===0||$start_matched===false)||($end_matched===0||$end_matched===false)) return -1;
     $saved_start_matches = $start_matches;
     $poss = array();
@@ -194,28 +192,20 @@ function return_sub_menu_no_recursion($menu_string){
     $poss_length = array();
     $offset = -1;
     for($j = 0;$j<count($saved_start_matches[1]);$j++){
-        $match = $saved_start_matches[1][$j];
-        do{
-            $offset++;
-            $offset = strpos($menu_string,$match,$offset);
-            if($offset===false)break;
-            $poss[]=$offset;
-            $poss_items[$offset]=0;
-            $poss_length[$offset]=strlen($match);
-        }while($offset<strlen($menu_string));
+        $offset = $saved_start_matches[1][$j][1];
+        if($offset===false)break;
+        $poss[]=$offset;
+        $poss_items[$offset]=0;
+        $poss_length[$offset]=strlen($saved_start_matches[1][$j][0]);
     }
     $saved_end_matches = $end_matches;
     $offset = -1;
     for($j = 0;$j<count($saved_end_matches[1]);$j++){
-        $match = $saved_end_matches[1][$j];
-        do{
-            $offset++;
-            $offset = strpos($menu_string,$match,$offset);
-            if($offset===false)break;
-            $poss[]=$offset;
-            $poss_items[$offset]=1;
-            $poss_length[$offset]=strlen($match);
-        }while($offset<strlen($menu_string));
+        $offset = $saved_end_matches[1][$j][1];
+        if($offset===false)break;
+        $poss[]=$offset;
+        $poss_items[$offset]=1;
+        $poss_length[$offset]=strlen($saved_end_matches[1][$j][0]);
     }
     //make sure they are in order for the next loops
     sort($poss,SORT_NUMERIC);
