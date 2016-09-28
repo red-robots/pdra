@@ -26,11 +26,14 @@
             </div><!--.column-2-->
         </div><!-- .row-1 -->
 		<div class="row-2">
-            <div class="column-1">
-                <div class="email">
-                    <?php if( get_field("email","option")) echo get_field("email","option");?>
-                </div><!--.email-->
-            </div><!--.column-1-->
+            <?php $email = get_field("email","option");
+            if(!empty($email)):?>
+                <div class="column-1">
+                    <div class="email">
+                        <a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
+                    </div><!--.email-->
+                </div><!--.column-1-->
+            <?php endif;?>
             <div class="column-2">
                 <?php wp_nav_menu( array( 'theme_location' => 'sitemapBW') ); ?>
             </div><!--.column-2-->

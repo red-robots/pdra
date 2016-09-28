@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page.php.
+ * Template part for displaying page content in page-join.php.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class("template-page"); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class("template-join"); ?>>
     <section class="row-1 standard-sub-nav">
 		<?php $matches = array();
 		$title = false;
@@ -33,4 +33,7 @@
             <?php the_content();?>
         </div>
     </section><!--.row-2-->
+	<section class="row-3 row-join">
+        <?php get_template_part( 'template-parts/row-join' );?>
+	</section><!--.row-3 .row-join-->
 </article><!-- #post-## -->

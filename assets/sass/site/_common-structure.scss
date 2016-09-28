@@ -27,8 +27,8 @@ a.surrounding {
     left: 0;
 }
 h1,h2,h3,h4,h5,h6 {
-    padding: $margin-medium 0;
-    margin: 0;
+    padding: 0;
+    margin: 0 0 $margin-small 0;
     font-weight: 600;
 }
 h1 {
@@ -50,13 +50,19 @@ h3 {
     > *:last-child {
         margin-bottom: 0;
     }
-    ul {
+    ul, ol {
         padding: 0;
         margin: 0;
         li {
             margin: 0 0 0 $margin-medium;
             font-size: 18px;
             padding: 0;
+        }
+    }
+    a {
+        color: #589998;
+        &:hover {
+            color: $color__pdra-dark-blue;
         }
     }
 }
@@ -68,18 +74,16 @@ p {
 #masthead {
     padding: $margin-medium $margin-large;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     align-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 	@media screen and (min-width: $mobilelandscapewidth){
         padding: $margin-medium $margin-standard-header-full-width;
-        justify-content: space-between;
-        flex-wrap: nowrap;
     }
     .logo.wrapper {
         position: relative;
-        width: 70%; 
+        width: 40%; 
         margin: 0;
         @media screen and (min-width: $mobilelandscapewidth){
             width: 15%;
@@ -90,12 +94,11 @@ p {
         }
     }
     #site-navigation {
-        width: 100%;
-        padding: $margin-medium 0 0 0;
-        text-align: center;
+        width: 60%;
+        padding: 0;
+        text-align: right;
         @media screen and (min-width: $mobilelandscapewidth){
             width: 75%;
-            padding: 0;
         }
         .menu-main-menu-container {
             width: 97%;
@@ -107,6 +110,7 @@ p {
             #primary-menu {
                 margin: 0;
                 padding: 0;
+                font-weight: 500;
                 text-align: center;
                 li {
                     font-size: 16px;
@@ -115,20 +119,25 @@ p {
                     float: none;
                     display: inline-block;
                     padding: 0 0 0 $margin-extra-large;
+                    margin: 2px 0;
                     position: relative;
                     &:first-child {
-                        padding: 0;
+                        padding-left: 0;
                     }
                     &:hover > ul,
                     &.focus > ul {
                         left: 50%;
-                        transform: translateX(-50%);
+                        transform: translateX(-40%);
                     }
                     a {
                         text-decoration: none;
                         color: $color__text-main;
                         &:hover {
                             color: $color__pdra-dark-blue;
+                            border-bottom: 2px solid $color__pdra-dark-blue;
+                        }
+                        &.active {
+                            border-bottom: 2px solid $color__pdra-dark-blue;
                         }
                     }
                     .sub-menu {
@@ -143,11 +152,14 @@ p {
                         margin: 0;
                         padding: $margin-small;
                         background-color: white;
+                        border-top: 2px solid $color__pdra-dark-blue;
                         li {
                             list-style-type: none;
                             padding: 0;
                             margin: 0;
                             a {
+                                line-height: 1.2;
+                                display: inline-block;
                             }
                         }
                     }
@@ -159,13 +171,11 @@ p {
             font-size: 20px;
             line-height: 1.2;
             position: relative;
-            width: 3%;
             @media screen and (min-width: $mobilelandscapewidth){
                 float: right;
             }
         }
         .fa-bars {
-            width: 6%;
             font-size: 20px;
             line-height: 1.2;
             padding: 0 0 0 $margin-small;
@@ -201,6 +211,19 @@ p {
             li {
                 margin: 0 0 0 $margin-medium;
                 padding: 0;
+                a {
+                    color: $color__text-screen;
+                    text-decoration: none;
+                    display: inline-block;
+                    line-height: 1.2;
+                    &:hover {
+                        color: $color__pdra-dark-blue;
+                        border-bottom: 2px solid $color__pdra-dark-blue;
+                    }
+                    &.active {
+                        border-bottom: 2px solid $color__pdra-dark-blue;
+                    }
+                }
             }
         }
     }
@@ -215,8 +238,10 @@ p {
     }
     .column-1 {
         text-align: center;
+        width: 100%;
         @media screen and (min-width: $mobilelandscapewidth){
             text-align: left;
+            width: auto;
         }
         ul li {
             &:last-child {
@@ -229,8 +254,10 @@ p {
     }
     .column-2 {
         text-align: center;
+        width: 100%;
         @media screen and (min-width: $mobilelandscapewidth){
             text-align: right;
+            width: auto;
         }
     }
     .column-1, .column-2 {
@@ -247,6 +274,9 @@ p {
                 a {
                     color: white;
                     text-decoration: none;
+                    &:hover {
+                        font-weight: 600;
+                    }
                 }
             }
         }
@@ -290,25 +320,41 @@ p {
                 @media screen and (min-width: $mobilelandscapewidth){
                     padding-bottom: 0;
                 }
+                &:hover {
+                    font-weight: 600;
+                }
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
             }
         }
         .column-2 {
             ul {
                 li {
-                    float:left;
+                    display: block;
+                    width: 100%;
+                    @media screen and (min-width: $mobilelandscapewidth){
+                        display: inline-block;
+                        width: auto;
+                    }
                     &:first-child {
-                        a:before {
-                            display: none;
+                        @media screen and (min-width: $mobilelandscapewidth){
+                            a:before {
+                                display: none;
+                            }
                         }
                     }
                     a {
-                        &:before {
-                            content:"";
-                            border-right: 2px solid white;
-                            height: 15px;
-                            margin: 0 8px;
-                            display: inline-block;
-                            vertical-align: middle;
+                        @media screen and (min-width: $mobilelandscapewidth){
+                            &:before {
+                                content:"";
+                                border-right: 2px solid white;
+                                height: 15px;
+                                margin: 0 8px 0 3px;
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
                         }
                     }
                 }
@@ -419,6 +465,9 @@ p {
             padding: 12% 0;
             border: 2px solid white;
             border-radius: 10px;
+            &:hover {
+                background-color: $color__pdra-teal;
+            }
         }
     }
 }
@@ -429,16 +478,22 @@ p {
     }
     header {
         width: 100%;
-        text-align: center;
-        margin: 0 0 $margin-small 0;
+        text-align: left;
+        margin: 0 auto $margin-small 0;
         h2 {    
-            border-bottom: 2px solid $color__pdra-dark-blue;
-            margin: 0 auto;
-            display: inline-block;
-            font-size: 24px;
+            font-size: $font__size-medium-large;
             text-transform: uppercase;
-            padding: 0 $margin-medium;
-            min-width: 40%;
+            padding: 0;
+            margin:0;
+            color: $color__pdra-dark-blue;
+        }
+    }
+    .minutes {
+        a {
+            color: $color__pdra-teal;
+            &:hover {
+                color: $color__pdra-dark-blue;
+            }
         }
     }
 }

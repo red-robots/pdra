@@ -16,10 +16,9 @@
             </header>
         <div class="background-image" style="background-image:url(<?php if(get_field("standard_nav_background_image","option")) echo wp_get_attachment_image_src(get_field("standard_nav_background_image","option"),"full")[0];?>);"></div>
     </section>
-    <?php $text = get_the_content();
-    if(!empty($text)):?>
+    <?php if(!empty(get_the_content())):?>
         <section class="row-2 copy">
-            <?php echo $text;?>
+            <?php the_content();?>
         </section><!-- .row-2 -->
         <section class="row-3 copy">
     <?php else:?>

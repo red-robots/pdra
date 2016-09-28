@@ -30,7 +30,7 @@
             </header>
         <?php endif;?>
         <div class="copy">
-            <?php echo get_the_content();?>
+            <?php the_content();?>
         </div>
     </section><!--.row-2-->
     <section class="row-3 row-minutes">

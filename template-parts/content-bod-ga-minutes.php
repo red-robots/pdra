@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page-ga-minutes.php.
+ * Template part for displaying page content in page-bod-ga-minutes.php.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class("template-ga-minutes"); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class("template-bod-ga-minutes"); ?>>
     <section class="row-1 standard-sub-nav">
 		<?php $matches = array();
 		$title = false;
@@ -34,6 +34,39 @@
         </div>
     </section><!--.row-2-->
     <section class="row-3 row-minutes">
+        <?php if(get_field("bod_minutes_header_text","option")):?>
+            <header>
+                <h2><?php echo get_field("bod_minutes_header_text","option");?></h2>
+            </header>
+        <?php endif;?>
+        <?php $date = intval(date("Ymd"))-20000;
+        $args = array('post_type'=>'bod-minutes','order'=>'ASC','orderby'=>'menu_order','posts_per_page'=>-1,'meta_query'=>array(
+            'relation'=>'AND',
+                array(
+                    'key'=>'meeting_date',
+                    'compare'=>'EXISTS',
+                ),
+                array(
+                    'key'=>'meeting_date',
+                    'value'=>$date,
+                    'compare'=>'>=',
+                    'type'=>'NUMERIC',
+                ),
+            ),
+        );
+        $query = new WP_Query($args);
+        if($query->have_posts()):
+            while($query->have_posts()):$query->the_post();?>
+                <div class="minutes">
+                    <?php if(get_field("file_upload")):?>
+                        <a href="<?php echo get_field("file_upload");?>" target="_blank"><?php echo get_the_title();?></a> - <?php if(get_field("meeting_date"))echo get_field("meeting_date");?>
+                    <?php endif;?>
+                </div><!--.minutes-->
+            <?php endwhile;
+            wp_reset_postdata();
+        endif;?>
+    </section>
+    <section class="row-4 row-minutes">
         <?php if(get_field("ga_minutes_header_text","option")):?>
             <header>
                 <h2><?php echo get_field("ga_minutes_header_text","option");?></h2>
@@ -66,7 +99,7 @@
             wp_reset_postdata();
         endif;?>
     </section>
-	<section class="row-4 row-join">
+	<section class="row-5 row-join">
         <?php if(get_field("row_join_text","option")):?>
             <div class="column-1"><?php echo get_field("row_join_text","option");?></div><!--.column-1-->
         <?php endif;//if for row_2_text?>

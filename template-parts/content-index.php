@@ -15,30 +15,18 @@
             <img class="full-width" src="<?php echo wp_get_attachment_image_src(get_field("row_1_image"),"full")[0];?>" alt="<?php echo get_post(get_field("row_1_image"))!==null?get_post(get_field("row_1_image"))->post_title:"";?>">
          <?php endif;//if for row_1_image?>
         <header>
-            <h1><?php echo get_bloginfo("name");?></h1>
+            <h1 class="wow fadeIn" data-wow-delay="2s"><?php echo get_bloginfo("name");?></h1>
         </header>
 	</section><!--.row-1-->
 	<section class="row-2 row-join">
-        <?php if(get_field("row_join_text","option")):?>
-            <div class="column-1"><?php echo get_field("row_join_text","option");?></div><!--.column-1-->
-        <?php endif;//if for row_join_text?>
-        <?php if(get_field("row_join_button_text","option")):?>
-            <div class="column-2">
-                <div class="button">
-                    <?php echo get_field("row_join_button_text","option");?>
-                    <?php if(get_field("row_join_button_link","option")):?>
-                        <a href="<?php echo get_field("row_join_button_link","option");?>" class="surrounding"></a>
-                    <?php endif;?>
-                </div>
-            </div><!--.column-2-->
-        <?php endif;//if for row_join_button_text?>
+        <?php get_template_part( 'template-parts/row-join' );?>
 	</section><!--.row-2 .row-join-->
 	<section class="row-3">
         <div class="background-image" style="background-image:url(<?php if(get_field("row_3_image")) echo wp_get_attachment_image_src(get_field("row_3_image"),"full")[0];?>);"></div>
         <div class="column wrapper">
             <div class="column-1">
-                <?php if(get_post(5)!==null):
-                    $post=get_post(5);
+                <?php if(get_post(7)!==null):
+                    $post=get_post(7);
                     setup_postdata($post);?>
                     <header>
                         <h2><?php echo get_the_title();?></h2>

@@ -57,7 +57,7 @@
                     </div><!--.map-info-->
                 <?php endif;?>
                 <div class="copy">
-                    <?php echo get_the_content();?>
+                    <?php the_content();?>
                 </div><!--.copy-->
             </div><!--.column-1-->
             <div class="column-2 js-blocks">
@@ -95,10 +95,6 @@
                                 <img src="<?php echo wp_get_attachment_image_src($image,"full")[0];?>" alt="<?php echo get_post($image)!==null?get_post($image)->post_title:"";?>">
                             <?php endif;?>
                             <div class="title"><?php the_title();?></div><!--.title-->
-                            <?php $term = get_field('term');
-                            if(!empty($term)):?>
-                                <div class="term"><?php echo $term;?></div><!--.term-->
-                            <?php endif;?>
                             <?php $tel = get_field('tel');
                             if(!empty($tel)):?>
                                 <div class="tel"><?php echo $tel;?></div><!--.tel-->
