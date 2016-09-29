@@ -84,7 +84,7 @@ p {
     }
     .logo.wrapper {
         position: relative;
-        width: 40%; 
+        width: 30%; 
         margin: 0;
         @media screen and (min-width: $mobilelandscapewidth){
             width: 15%;
@@ -385,10 +385,16 @@ p {
         padding: 0;
         text-align: center;
         li {
-            display: inline-block;
-            padding: 0 0 0 $margin-medium;
             margin: 0;
             list-style-type: none;
+            padding: 0;
+            width: 100%;
+            display: block;
+            @media screen and (min-width: $mobilelandscapewidth){
+                display: inline-block;
+                width: auto;
+                padding: 0 0 0 $margin-medium;
+            }
             &:first-child {
                 padding: 0;
             }

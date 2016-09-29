@@ -114,7 +114,9 @@ article {
                     }
                 }
                 .column-3 {
-                    .copy {
+                    .event.wrapper {
+                        font-weight: 500;
+                        margin-bottom: $margin-medium;
                         .event {
                             font-size: $font__size-medium;
                             &:after {
@@ -419,7 +421,74 @@ article {
             }
         }
     }
-    &.template-events {
+    &.template-event {
+        .row-1 {
+            /* see standard sub nav */
+        }
+        .row-2 {
+            padding: $margin-medium $margin-large;
+            @media screen and (min-width: $mobilelandscapewidth){
+                padding: $margin-standard-vertical-full-width-medium $margin-standard-vertical-full-width-extra-large;
+            }
+            &:after {
+                clear:both;
+                display: block;
+                content: "";
+            }
+            header {
+                width: 100%;
+                text-align: center;
+                margin: 0 0 $margin-medium 0;
+                h1 {    
+                    border-bottom: 2px solid $color__pdra-dark-blue;
+                    margin: 0 auto;
+                    display: inline-block;
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    padding: 0 $margin-medium;
+                    min-width: 40%;
+                }
+            }
+            .column-1 {
+                width: 100%;
+                @media screen and (min-width: $mobilelandscapewidth){
+                    width: 60%;
+                    float: left; 
+                }
+                .copy {
+                }
+            }
+            .column-2 {
+                width: 100%;
+                font-weight: 500;
+                font-size: 18px;
+                @media screen and (min-width: $mobilelandscapewidth){
+                    width: 40%;
+                    padding: 0 0 0 4%;
+                    float: right;
+                }
+                header {
+                    text-align: left;
+                    margin: 0 0 $margin-small 0;
+                    padding: 0;
+                    h2 {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+                .event {
+                    a {
+                        color: $color__pdra-teal;
+                        text-decoration: none;
+                        &:hover {
+                            color: $color__pdra-dark-blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.template-event-landing {
         .row-1 {
             /* see standard sub nav */
         }
@@ -450,8 +519,17 @@ article {
             @media screen and (min-width: $mobilelandscapewidth){
                 padding: $margin-standard-vertical-full-width-medium $margin-standard-vertical-full-width-extra-large;
             }
-            .copy {
+            .event.wrapper {
+                font-weight: 500;
+                font-size: 18px;
                 .event {
+                    a {
+                        color: $color__pdra-teal;
+                        text-decoration: none;
+                        &:hover {
+                            color: $color__pdra-dark-blue;
+                        }
+                    }
                 }
             }
         }
@@ -1029,6 +1107,7 @@ article {
                 }
                 header {
                     width: 100%;
+                    position: relative;
                     text-align: left;
                     border-bottom: 2px solid $color__pdra-dark-blue;
                     margin: 0 0 $margin-small 0;
@@ -1038,12 +1117,16 @@ article {
                         padding: 0;
                     }
                 }
-                img {
-                    width: 100%;
-                    display: block;
+                .image.wrapper {
+                    position: relative;
                     margin: 0 0 $margin-small 0;
+                    img {
+                        width: 100%;
+                        display: block;
+                    }
                 }
                 .address {
+                    position: relative;
                     width: 100%;
                     margin: 0 0 $margin-small 0;
                     font-weight: 600;

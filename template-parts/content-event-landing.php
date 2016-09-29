@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page-events.php.
+ * Template part for displaying page content in page-event-landing.php.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class("template-events"); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class("template-event-landing"); ?>>
     <section class="row-1 standard-sub-nav">
 		<?php $matches = array();
 		$title = false;
@@ -41,8 +41,24 @@
                 <h2><?php the_title();?></h2>
             </header>
         <?php endif;?>
-        <div class="copy">
-            <?php $args = array('post_type'=>'event','orderby'=>'menu-order','posts_per_page'=>-1,'order'=>'ASC');
+        <div class="event wrapper">
+            <?php $date = intval(date("Ymd"));
+            $args = array('post_type'=>'event',
+            'order'=>'ASC','orderby'=>'menu_order',
+            'posts_per_page'=>-1,'meta_query'=>array(
+                'relation'=>'AND',
+                    array(
+                        'key'=>'date',
+                        'compare'=>'EXISTS',
+                    ),
+                    array(
+                        'key'=>'date',
+                        'value'=>$date,
+                        'compare'=>'>=',
+                        'type'=>'NUMERIC',
+                    ),
+                ),
+            );
             $query = new WP_Query($args);
             if($query->have_posts()):
                 while($query->have_posts()):$query->the_post();?>

@@ -85,9 +85,25 @@
                     <header>
                         <h2><?php echo get_the_title();?></h2>
                     </header>
-                    <div class="copy">
-                       <?php $args = array('post_type'=>'event','orderby'=>'menu-order','posts_per_page'=>5,'order'=>'ASC');
-                       $query = new WP_Query($args);
+                    <div class="event wrapper">
+                       <?php $date = intval(date("Ymd"));
+                        $args = array('post_type'=>'event',
+                        'order'=>'ASC','orderby'=>'menu_order',
+                        'posts_per_page'=>5,'meta_query'=>array(
+                            'relation'=>'AND',
+                                array(
+                                    'key'=>'date',
+                                    'compare'=>'EXISTS',
+                                ),
+                                array(
+                                    'key'=>'date',
+                                    'value'=>$date,
+                                    'compare'=>'>=',
+                                    'type'=>'NUMERIC',
+                                ),
+                            ),
+                        );
+                        $query = new WP_Query($args);
                        if($query->have_posts()):
                             while($query->have_posts()):$query->the_post();?>
                                 <div class="event">

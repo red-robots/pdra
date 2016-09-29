@@ -20,7 +20,7 @@ get_header(); ?>
 			<?php
 			if( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'events' );
+				get_template_part( 'template-parts/content', 'event-landing' );
 
 			endif; // End of the if.
 			?>

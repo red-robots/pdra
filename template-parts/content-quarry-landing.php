@@ -22,12 +22,19 @@
             $row = 0;
             for($i=0;$i<$count;$i++):$query->the_post();?>
                 <div class="quarry js-blocks count-<?php echo $i%3;?> row-<?php echo $row;?>">
-                    <header><h2><?php echo get_the_title();?></h2></header>
-                    <img src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(),"full")[0];?>" alt="<?php echo get_post(get_post_thumbnail_id())!==null?get_post(get_post_thumbnail_id())->post_title:"";?>">
+                    <header>
+                        <h2><?php echo get_the_title();?></h2>
+                        <a class="surrounding" href="<?php echo get_the_permalink();?>"></a>
+                    </header>
+                    <div class="image wrapper">
+                        <img src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(),"full")[0];?>" alt="<?php echo get_post(get_post_thumbnail_id())!==null?get_post(get_post_thumbnail_id())->post_title:"";?>">
+                        <a class="surrounding" href="<?php echo get_the_permalink();?>"></a>
+                    </div><!--.image.wrapper-->
                     <?php if(get_field("address")):?>
                         <div class="address">
                             <div class="line-1"><?php echo get_field("address_line_1");?></div>
                             <div class="line-2"><?php echo get_field("address_line_2");?></div>
+                            <a class="surrounding" href="<?php echo get_the_permalink();?>"></a>
                         </div><!--.address-->
                     <?php endif;?>
                     <?php if(get_field("full_detail_button_text")):?>
