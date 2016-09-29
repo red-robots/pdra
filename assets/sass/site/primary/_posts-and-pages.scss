@@ -113,6 +113,14 @@ article {
                         }
                     }
                 }
+                .column-1, .column-2 {
+                    .button {
+                        margin-bottom: $margin-medium;
+                        @media screen and (min-width: $mobilelandscapewidth){
+                            margin-bottom: 0;
+                        }
+                    }
+                }
                 .column-3 {
                     .event.wrapper {
                         font-weight: 500;
@@ -125,12 +133,37 @@ article {
                                 clear: both;
                             }
                             .date {
-                                float: left;
-                                width: 30%;
+                                display: inline-block;
+                                @media screen and (min-width: $mobilelandscapewidth){
+                                    float: left;
+                                    width: 50%;
+                                }
+                                @media screen and (min-width: $tabwidth){
+                                    width: 45%;
+                                }
+                                @media screen and (min-width: $midwidth){
+                                    width: 40%;
+                                }
+                                @media screen and (min-width: $deskwidth){
+                                    width: 65px;
+                                }
                             }
                             .title {
-                                float: right;
-                                width: 70%;
+                                display: inline-block;
+                                @media screen and (min-width: $mobilelandscapewidth){
+                                    float: right;
+                                    width: 50%;
+                                }
+                                @media screen and (min-width: $tabwidth){
+                                    width: 55%;
+                                }
+                                @media screen and (min-width: $midwidth){
+                                    width: 60%;
+                                }
+                                @media screen and (min-width: $deskwidth){
+                                    width: 200px;
+                                    float: left;
+                                }
                                 a {
                                     color: $color__pdra-dark-blue;
                                     text-decoration: none;
