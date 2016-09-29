@@ -32,8 +32,8 @@ add_filter('login_headerurl','loginpage_custom_link');
 	Favicon.
 ---------------------------------------*/
 function mytheme_favicon() { 
- echo '<link rel="shortcut icon" href="' . get_bloginfo('stylesheet_directory') . '/images/favicon.ico" >'; 
-} 
+ echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_bloginfo('stylesheet_directory') . '/images/apple-touch-icon.png"><link rel="icon" type="image/png" href="' . get_bloginfo('stylesheet_directory') . '/images/favicon-192x192.png" sizes="192x192"><link rel="icon" type="image/png" href="' . get_bloginfo('stylesheet_directory') . '/images/favicon-32x32.png" sizes="32x32"><link rel="icon" type="image/png" href="' . get_bloginfo('stylesheet_directory') . '/images/favicon-16x16.png" sizes="16x16"><link rel="mask-icon" href="' . get_bloginfo('stylesheet_directory') . '/images/safari-pinned-tab.svg" color="#5bbad5"><link rel="shortcut icon" href="' . get_bloginfo('stylesheet_directory') . '/images/favicon.ico" ><meta name="theme-color" content="#ffffff">'; 
+}
 add_action('wp_head', 'mytheme_favicon');
 
 function mytheme_font_awesome() {
