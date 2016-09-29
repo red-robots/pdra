@@ -136,6 +136,7 @@ article {
                                 display: inline;
                                 @media screen and (min-width: $mobilelandscapewidth){
                                     float: left;
+                                    display: inline-block;
                                     width: 50%;
                                 }
                                 @media screen and (min-width: $tabwidth){
@@ -152,6 +153,7 @@ article {
                                 display: inline;
                                 @media screen and (min-width: $mobilelandscapewidth){
                                     float: right;
+                                    display: inline-block;
                                     width: 50%;
                                 }
                                 @media screen and (min-width: $tabwidth){

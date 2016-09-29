@@ -851,12 +851,12 @@ article.template-index .row-3 .column.wrapper .column-1 .button,article.template
 article.template-index .row-3 .column.wrapper .column-3 .event.wrapper .event{font-size:16px}
 article.template-index .row-3 .column.wrapper .column-3 .event.wrapper .event:after{content:"";display:block;clear:both}
 article.template-index .row-3 .column.wrapper .column-3 .event.wrapper .event .date{display:inline}
-@media screen and (min-width:600px){article.template-index .row-3 .column.wrapper .column-3 .event.wrapper .event .date{float:left;width:50%}
+@media screen and (min-width:600px){article.template-index .row-3 .column.wrapper .column-3 .event.wrapper .event .date{float:left;display:inline-block;width:50%}
 }@media screen and (min-width:700px){article.template-index .row-3 .column.wrapper .column-3 .event.wrapper .event .date{width:45%}
 }@media screen and (min-width:900px){article.template-index .row-3 .column.wrapper .column-3 .event.wrapper .event .date{width:40%}
 }@media screen and (min-width:1300px){article.template-index .row-3 .column.wrapper .column-3 .event.wrapper .event .date{width:65px}
 }article.template-index .row-3 .column.wrapper .column-3 .event.wrapper .event .title{display:inline}
-@media screen and (min-width:600px){article.template-index .row-3 .column.wrapper .column-3 .event.wrapper .event .title{float:right;width:50%}
+@media screen and (min-width:600px){article.template-index .row-3 .column.wrapper .column-3 .event.wrapper .event .title{float:right;display:inline-block;width:50%}
 }@media screen and (min-width:700px){article.template-index .row-3 .column.wrapper .column-3 .event.wrapper .event .title{width:55%}
 }@media screen and (min-width:900px){article.template-index .row-3 .column.wrapper .column-3 .event.wrapper .event .title{width:60%}
 }@media screen and (min-width:1300px){article.template-index .row-3 .column.wrapper .column-3 .event.wrapper .event .title{width:200px;float:left}
