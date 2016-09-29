@@ -133,7 +133,7 @@ article {
                                 clear: both;
                             }
                             .date {
-                                display: inline-block;
+                                display: inline;
                                 @media screen and (min-width: $mobilelandscapewidth){
                                     float: left;
                                     width: 50%;
@@ -149,7 +149,7 @@ article {
                                 }
                             }
                             .title {
-                                display: inline-block;
+                                display: inline;
                                 @media screen and (min-width: $mobilelandscapewidth){
                                     float: right;
                                     width: 50%;
