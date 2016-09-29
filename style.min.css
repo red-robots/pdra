@@ -732,7 +732,7 @@ h3{font-size:17px;color:#402c7c}
 .copy{font-weight:500;font-size:18px}
 .copy>*:first-child{margin-top:0}
 .copy>*:last-child{margin-bottom:0}
-.copy ul,.copy ol{padding:0;margin:0}
+.copy ul,.copy ol{padding:0;margin:0 0 20px 0}
 .copy ul li,.copy ol li{margin:0 0 0 20px;font-size:18px;padding:0}
 .copy a{color:#589998}
 .copy a:hover{color:#402c7c}
@@ -815,8 +815,12 @@ p{margin:20px 0}
 @media screen and (min-width:600px){.row-join .column-2{width:27%;font-size:25px;min-width:227px}
 }.row-join .column-2 .button{position:relative;width:100%;text-transform:uppercase;text-align:center;padding:12% 0;border:2px solid white;border-radius:10px}
 .row-join .column-2 .button:hover{background-color:#589998}
-.row-minutes{padding:20px 30px}
-@media screen and (min-width:600px){.row-minutes{padding:4% 18%}
+.row-minutes{padding:20px 30px;font-weight:500;font-size:18px}
+@media screen and (min-width:600px){.row-minutes{padding:20px 18% 4% 18%}
+}.row-minutes.bod-ga.row-3{padding:20px 30px 0 30px}
+@media screen and (min-width:600px){.row-minutes.bod-ga.row-3{padding:20px 18% 0 18%}
+}.row-minutes.bod-ga.row-4{padding:20px 30px}
+@media screen and (min-width:600px){.row-minutes.bod-ga.row-4{padding:20px 18% 4% 18%}
 }.row-minutes header{width:100%;text-align:left;margin:0 auto 10px 0}
 .row-minutes header h2{font-size:20px;text-transform:uppercase;padding:0;margin:0;color:#402c7c}
 .row-minutes .minutes a{color:#589998}
@@ -843,7 +847,9 @@ article.template-index .row-3 .column.wrapper .column-1 .button:hover,article.te
 article.template-index .row-3 .column.wrapper .column-3 .copy .event{font-size:16px}
 article.template-index .row-3 .column.wrapper .column-3 .copy .event:after{content:"";display:block;clear:both}
 article.template-index .row-3 .column.wrapper .column-3 .copy .event .date{float:left;width:30%}
-article.template-index .row-3 .column.wrapper .column-3 .copy .event .title{color:#402c7c;float:right;width:70%}
+article.template-index .row-3 .column.wrapper .column-3 .copy .event .title{float:right;width:70%}
+article.template-index .row-3 .column.wrapper .column-3 .copy .event .title a{color:#402c7c;text-decoration:none}
+article.template-index .row-3 .column.wrapper .column-3 .copy .event .title a:hover{color:#589998}
 article.template-leadership .row-2{padding:20px 30px}
 @media screen and (min-width:600px){article.template-leadership .row-2{padding:4% 10% 0 10%}
 }article.template-leadership .row-2 header{width:100%;text-align:center;margin:0 0 20px 0}
@@ -901,7 +907,13 @@ article.template-page .row-2{padding:20px 30px}
 @media screen and (min-width:600px){article.template-page .row-2{padding:4% 18%}
 }article.template-page .row-2 header{width:100%;text-align:center;margin:0 0 20px 0}
 article.template-page .row-2 header h1{border-bottom:2px solid #402c7c;margin:0 auto;display:inline-block;font-size:24px;text-transform:uppercase;padding:0 20px;min-width:40%}
-article.template-ga-minutes .row-2,article.template-bod-minutes .row-2{padding:20px 30px 0 30px}
+article.template-events .row-2{padding:20px 30px 0 30px}
+@media screen and (min-width:600px){article.template-events .row-2{padding:4% 18% 0 18%}
+}article.template-events .row-2 header{width:100%;text-align:center;margin:0 0 20px 0}
+article.template-events .row-2 header h1{border-bottom:2px solid #402c7c;margin:0 auto;display:inline-block;font-size:24px;text-transform:uppercase;padding:0 20px;min-width:40%}
+article.template-events .row-3{padding:20px 30px}
+@media screen and (min-width:600px){article.template-events .row-3{padding:4% 18%}
+}article.template-ga-minutes .row-2,article.template-bod-minutes .row-2{padding:20px 30px 0 30px}
 @media screen and (min-width:600px){article.template-ga-minutes .row-2,article.template-bod-minutes .row-2{padding:4% 18% 0 18%}
 }article.template-ga-minutes .row-2 header,article.template-bod-minutes .row-2 header{width:100%;text-align:center;margin:0 0 20px 0}
 article.template-ga-minutes .row-2 header h1,article.template-bod-minutes .row-2 header h1{border-bottom:2px solid #402c7c;margin:0 auto;display:inline-block;font-size:24px;text-transform:uppercase;padding:0 20px;min-width:40%}

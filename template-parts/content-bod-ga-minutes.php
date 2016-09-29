@@ -33,85 +33,75 @@
             <?php the_content();?>
         </div>
     </section><!--.row-2-->
-    <section class="row-3 row-minutes">
-        <?php if(get_field("bod_minutes_header_text","option")):?>
-            <header>
-                <h2><?php echo get_field("bod_minutes_header_text","option");?></h2>
-            </header>
-        <?php endif;?>
-        <?php $date = intval(date("Ymd"))-20000;
-        $args = array('post_type'=>'bod-minutes','order'=>'ASC','orderby'=>'menu_order','posts_per_page'=>-1,'meta_query'=>array(
-            'relation'=>'AND',
-                array(
-                    'key'=>'meeting_date',
-                    'compare'=>'EXISTS',
+    <?php if ( ! post_password_required() ) :?>
+        <section class="row-3 row-minutes bod-ga">
+            <?php if(get_field("bod_minutes_header_text","option")):?>
+                <header>
+                    <h2><?php echo get_field("bod_minutes_header_text","option");?></h2>
+                </header>
+            <?php endif;?>
+            <?php $date = intval(date("Ymd"))-20000;
+            $args = array('post_type'=>'bod-minutes','order'=>'ASC','orderby'=>'menu_order','posts_per_page'=>-1,'meta_query'=>array(
+                'relation'=>'AND',
+                    array(
+                        'key'=>'meeting_date',
+                        'compare'=>'EXISTS',
+                    ),
+                    array(
+                        'key'=>'meeting_date',
+                        'value'=>$date,
+                        'compare'=>'>=',
+                        'type'=>'NUMERIC',
+                    ),
                 ),
-                array(
-                    'key'=>'meeting_date',
-                    'value'=>$date,
-                    'compare'=>'>=',
-                    'type'=>'NUMERIC',
+            );
+            $query = new WP_Query($args);
+            if($query->have_posts()):
+                while($query->have_posts()):$query->the_post();?>
+                    <div class="minutes">
+                        <?php if(get_field("file_upload")):?>
+                            <a href="<?php echo get_field("file_upload");?>" target="_blank"><?php echo get_the_title();?></a> - <?php if(get_field("meeting_date"))echo get_field("meeting_date");?>
+                        <?php endif;?>
+                    </div><!--.minutes-->
+                <?php endwhile;
+                wp_reset_postdata();
+            endif;?>
+        </section>
+        <section class="row-4 row-minutes bod-ga">
+            <?php if(get_field("ga_minutes_header_text","option")):?>
+                <header>
+                    <h2><?php echo get_field("ga_minutes_header_text","option");?></h2>
+                </header>
+            <?php endif;?>
+            <?php $date = intval(date("Ymd"))-20000;
+            $args = array('post_type'=>'ga-minutes','order'=>'ASC','orderby'=>'menu_order','posts_per_page'=>-1,'meta_query'=>array(
+                'relation'=>'AND',
+                    array(
+                        'key'=>'meeting_date',
+                        'compare'=>'EXISTS',
+                    ),
+                    array(
+                        'key'=>'meeting_date',
+                        'value'=>$date,
+                        'compare'=>'>=',
+                        'type'=>'NUMERIC',
+                    ),
                 ),
-            ),
-        );
-        $query = new WP_Query($args);
-        if($query->have_posts()):
-            while($query->have_posts()):$query->the_post();?>
-                <div class="minutes">
-                    <?php if(get_field("file_upload")):?>
-                        <a href="<?php echo get_field("file_upload");?>" target="_blank"><?php echo get_the_title();?></a> - <?php if(get_field("meeting_date"))echo get_field("meeting_date");?>
-                    <?php endif;?>
-                </div><!--.minutes-->
-            <?php endwhile;
-            wp_reset_postdata();
-        endif;?>
-    </section>
-    <section class="row-4 row-minutes">
-        <?php if(get_field("ga_minutes_header_text","option")):?>
-            <header>
-                <h2><?php echo get_field("ga_minutes_header_text","option");?></h2>
-            </header>
-        <?php endif;?>
-        <?php $date = intval(date("Ymd"))-20000;
-        $args = array('post_type'=>'ga-minutes','order'=>'ASC','orderby'=>'menu_order','posts_per_page'=>-1,'meta_query'=>array(
-            'relation'=>'AND',
-                array(
-                    'key'=>'meeting_date',
-                    'compare'=>'EXISTS',
-                ),
-                array(
-                    'key'=>'meeting_date',
-                    'value'=>$date,
-                    'compare'=>'>=',
-                    'type'=>'NUMERIC',
-                ),
-            ),
-        );
-        $query = new WP_Query($args);
-        if($query->have_posts()):
-            while($query->have_posts()):$query->the_post();?>
-                <div class="minutes">
-                    <?php if(get_field("file_upload")):?>
-                        <a href="<?php echo get_field("file_upload");?>" target="_blank"><?php echo get_the_title();?></a> - <?php if(get_field("meeting_date"))echo get_field("meeting_date");?>
-                    <?php endif;?>
-                </div><!--.minutes-->
-            <?php endwhile;
-            wp_reset_postdata();
-        endif;?>
-    </section>
+            );
+            $query = new WP_Query($args);
+            if($query->have_posts()):
+                while($query->have_posts()):$query->the_post();?>
+                    <div class="minutes">
+                        <?php if(get_field("file_upload")):?>
+                            <a href="<?php echo get_field("file_upload");?>" target="_blank"><?php echo get_the_title();?></a> - <?php if(get_field("meeting_date"))echo get_field("meeting_date");?>
+                        <?php endif;?>
+                    </div><!--.minutes-->
+                <?php endwhile;
+                wp_reset_postdata();
+            endif;?>
+        </section>
+    <?php endif;//if for password required?>
 	<section class="row-5 row-join">
-        <?php if(get_field("row_join_text","option")):?>
-            <div class="column-1"><?php echo get_field("row_join_text","option");?></div><!--.column-1-->
-        <?php endif;//if for row_2_text?>
-        <?php if(get_field("row_join_button_text","option")):?>
-            <div class="column-2">
-                <div class="button">
-                    <?php echo get_field("row_join_button_text","option");?>
-                    <?php if(get_field("row_join_button_link","option")):?>
-                        <a href="<?php echo get_field("row_join_button_link","option");?>" class="surrounding"></a>
-                    <?php endif;?>
-                </div>
-            </div><!--.column-2-->
-        <?php endif;//if for row_2_button_text?>
+        <?php get_template_part( 'template-parts/row-join' );?>
 	</section><!--.row-4 .row-join-->
 </article><!-- #post-## -->

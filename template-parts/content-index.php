@@ -25,12 +25,14 @@
         <div class="background-image" style="background-image:url(<?php if(get_field("row_3_image")) echo wp_get_attachment_image_src(get_field("row_3_image"),"full")[0];?>);"></div>
         <div class="column wrapper">
             <div class="column-1">
-                <?php if(get_post(7)!==null):
-                    $post=get_post(7);
+                <?php if(get_post(7)!==null&&get_post(5)!==null):
+                    $post=get_post(5);
                     setup_postdata($post);?>
                     <header>
                         <h2><?php echo get_the_title();?></h2>
                     </header>
+                    <?php $post=get_post(7);
+                    setup_postdata($post);?>
                     <div class="copy">
                         <?php $the_content = get_the_content();
                         if(strlen($the_content)<=200):
@@ -84,7 +86,7 @@
                         <h2><?php echo get_the_title();?></h2>
                     </header>
                     <div class="copy">
-                       <?php $args = array('post_type'=>'event','orderby'=>'menu-order','posts_per_page'=>3,'order'=>'ASC');
+                       <?php $args = array('post_type'=>'event','orderby'=>'menu-order','posts_per_page'=>5,'order'=>'ASC');
                        $query = new WP_Query($args);
                        if($query->have_posts()):
                             while($query->have_posts()):$query->the_post();?>
@@ -95,7 +97,7 @@
                                         </div><!--.date-->
                                     <?php endif;?>
                                     <div class="title">
-                                        <?php the_title();?>
+                                        <a href="<?php echo get_the_permalink();?>"><?php the_title();?></a>
                                     </div><!--.title-->
                                 </div><!--.event-->
                             <?php endwhile;

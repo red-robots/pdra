@@ -127,9 +127,15 @@ article {
                                 width: 30%;
                             }
                             .title {
-                                color: $color__pdra-dark-blue;
                                 float: right;
                                 width: 70%;
+                                a {
+                                    color: $color__pdra-dark-blue;
+                                    text-decoration: none;
+                                    &:hover {
+                                        color: $color__pdra-teal;
+                                    }
+                                }
                             }
                         }
                     }
@@ -410,6 +416,43 @@ article {
                 }
             }
             .copy {
+            }
+        }
+    }
+    &.template-events {
+        .row-1 {
+            /* see standard sub nav */
+        }
+        .row-2 {
+            padding: $margin-medium $margin-large 0 $margin-large;
+            @media screen and (min-width: $mobilelandscapewidth){
+                padding: $margin-standard-vertical-full-width-medium $margin-standard-vertical-full-width-extra-large 0 $margin-standard-vertical-full-width-extra-large;
+            }
+            header {
+                width: 100%;
+                text-align: center;
+                margin: 0 0 $margin-medium 0;
+                h1 {    
+                    border-bottom: 2px solid $color__pdra-dark-blue;
+                    margin: 0 auto;
+                    display: inline-block;
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    padding: 0 $margin-medium;
+                    min-width: 40%;
+                }
+            }
+            .copy {
+            }
+        }
+        .row-3 {
+            padding: $margin-medium $margin-large;
+            @media screen and (min-width: $mobilelandscapewidth){
+                padding: $margin-standard-vertical-full-width-medium $margin-standard-vertical-full-width-extra-large;
+            }
+            .copy {
+                .event {
+                }
             }
         }
     }

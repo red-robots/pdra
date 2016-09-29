@@ -53,7 +53,7 @@ h3 {
     }
     ul, ol {
         padding: 0;
-        margin: 0;
+        margin: 0 0 $margin-medium 0;
         li {
             margin: 0 0 0 $margin-medium;
             font-size: 18px;
@@ -474,8 +474,22 @@ p {
 }
 .row-minutes {
     padding: $margin-medium $margin-large;
+    font-weight: 500;
+    font-size: 18px;
     @media screen and (min-width: $mobilelandscapewidth){
-        padding: $margin-standard-vertical-full-width-medium $margin-standard-vertical-full-width-extra-large;
+        padding: $margin-medium $margin-standard-vertical-full-width-extra-large $margin-standard-vertical-full-width-medium $margin-standard-vertical-full-width-extra-large;
+    }
+    &.bod-ga.row-3 {
+        padding: $margin-medium $margin-large 0 $margin-large;
+        @media screen and (min-width: $mobilelandscapewidth){
+            padding: $margin-medium $margin-standard-vertical-full-width-extra-large 0 $margin-standard-vertical-full-width-extra-large;
+        }
+    }
+    &.bod-ga.row-4 {
+        padding: $margin-medium $margin-large;
+        @media screen and (min-width: $mobilelandscapewidth){
+            padding: $margin-medium $margin-standard-vertical-full-width-extra-large $margin-standard-vertical-full-width-medium $margin-standard-vertical-full-width-extra-large;
+        }
     }
     header {
         width: 100%;
