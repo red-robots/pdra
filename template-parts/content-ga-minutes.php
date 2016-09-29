@@ -60,7 +60,7 @@
                 while($query->have_posts()):$query->the_post();?>
                     <div class="minutes">
                         <?php if(get_field("file_upload")):?>
-                            <a href="<?php echo get_field("file_upload");?>" target="_blank"><?php echo get_the_title();?></a> - <?php if(get_field("meeting_date"))echo get_field("meeting_date");?>
+                            <a href="<?php echo get_field("file_upload");?>" target="_blank"><?php echo get_the_title();?></a>
                         <?php endif;?>
                     </div><!--.minutes-->
                 <?php endwhile;
