@@ -13,14 +13,14 @@ function acstarter_scripts() {
 
 	wp_enqueue_script( 
 			'acstarter-blocks', 
-			get_template_directory_uri() . '/assets/js/vendors.js', 
+			get_template_directory_uri() . '/assets/js/vendors.min.js', 
 			array(), '20120206', 
 			true 
 		);
 
 	wp_enqueue_script( 
 			'acstarter-custom', 
-			get_template_directory_uri() . '/assets/js/custom.js', 
+			get_template_directory_uri() . '/assets/js/custom.min.js', 
 			array(), '20120206', 
 			true 
 		);

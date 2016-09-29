@@ -70,9 +70,9 @@ jQuery(document).ready(function ($) {
 	*	Nice Page Scroll
 	*
 	------------------------------------*/
-	$(function(){	
+	/*$(function(){	
 		$("html").niceScroll();
-	});
+	});*/
 	
 	
 	/*
