@@ -916,7 +916,7 @@ article.template-event .row-2 header{width:100%;text-align:center;margin:0 0 20p
 article.template-event .row-2 header h1{border-bottom:2px solid #402c7c;margin:0 auto;display:inline-block;font-size:24px;text-transform:uppercase;padding:0 20px;min-width:40%}
 article.template-event .row-2 .column-1{width:100%}
 @media screen and (min-width:600px){article.template-event .row-2 .column-1{width:60%;float:left}
-}article.template-event .row-2 .column-2{width:100%;font-weight:500;font-size:18px}
+}article.template-event .row-2 .column-2{width:100%;font-weight:500;font-size:18px;padding:20px 0 0 0}
 @media screen and (min-width:600px){article.template-event .row-2 .column-2{width:40%;padding:0 0 0 4%;float:right}
 }article.template-event .row-2 .column-2 header{text-align:left;margin:0 0 10px 0;padding:0}
 article.template-event .row-2 .column-2 header h2{margin:0;padding:0}
