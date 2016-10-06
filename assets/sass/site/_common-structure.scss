@@ -156,11 +156,11 @@ p {
                         border-top: 2px solid $color__pdra-dark-blue;
                         li {
                             list-style-type: none;
-                            padding: 0;
+                            padding: 5px 0;
                             margin: 0;
                             a {
                                 line-height: 1.2;
-                                display: inline-block;
+                                display: block;
                             }
                         }
                     }
@@ -169,7 +169,7 @@ p {
         }
         .fa-facebook {
             text-align: center;
-            font-size: 20px;
+            font-size: 25px;
             line-height: 1.2;
             position: relative;
             @media screen and (min-width: $mobilelandscapewidth){
@@ -177,9 +177,9 @@ p {
             }
         }
         .fa-bars {
-            font-size: 20px;
+            font-size: 25px;
             line-height: 1.2;
-            padding: 0 0 0 $margin-small;
+            padding: 0 0 0 $margin-medium;
             @media screen and (min-width: $mobilelandscapewidth){
                 display: none;
             }
@@ -187,10 +187,9 @@ p {
     }
 }
 #page {
-    position: relative;
     .mobile-menu {
         width: 80%;
-        position: absolute;
+        position: fixed;
         padding: $margin-medium;
         right: -100%;
         top: 0;
@@ -202,7 +201,7 @@ p {
         }
         .fa-bars {
             width: 100%;
-            font-size: 20px;
+            font-size: 25px;
             line-height: 1.2;
             padding: 0 0 $margin-small 0;
         }
