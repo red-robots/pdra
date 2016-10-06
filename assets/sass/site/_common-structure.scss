@@ -193,6 +193,8 @@ p {
         padding: $margin-medium;
         right: -100%;
         top: 0;
+        overflow-y: scroll;
+        height: 100%;
         z-index: 2;
         background-color: white;
         color: black;
@@ -205,23 +207,26 @@ p {
             line-height: 1.2;
             padding: 0 0 $margin-small 0;
         }
-        ul {
-            margin: 0;
-            padding: 0;
-            li {
-                margin: 0 0 0 $margin-medium;
+        .menu-main-menu-container {
+            padding-bottom: $margin-medium;
+            ul {
+                margin: 0;
                 padding: 0;
-                a {
-                    color: $color__text-screen;
-                    text-decoration: none;
-                    display: inline-block;
-                    line-height: 1.2;
-                    &:hover {
-                        color: $color__pdra-dark-blue;
-                        border-bottom: 2px solid $color__pdra-dark-blue;
-                    }
-                    &.active {
-                        border-bottom: 2px solid $color__pdra-dark-blue;
+                li {
+                    margin: 0 0 0 $margin-medium;
+                    padding: 0;
+                    a {
+                        color: $color__text-screen;
+                        text-decoration: none;
+                        display: inline-block;
+                        line-height: 1.2;
+                        &:hover {
+                            color: $color__pdra-dark-blue;
+                            border-bottom: 2px solid $color__pdra-dark-blue;
+                        }
+                        &.active {
+                            border-bottom: 2px solid $color__pdra-dark-blue;
+                        }
                     }
                 }
             }
