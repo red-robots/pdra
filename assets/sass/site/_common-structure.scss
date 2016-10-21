@@ -71,6 +71,15 @@ p {
     margin: $margin-medium 0;
 }
 
+#notice {
+    color: white;
+    background-color: red;
+    padding: $margin-medium;
+    text-align: center;
+    p {
+        color: inherit;
+    }
+}
 
 #masthead {
     padding: $margin-medium $margin-large;

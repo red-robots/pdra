@@ -737,6 +737,8 @@ h3{font-size:17px;color:#402c7c}
 .copy a{color:#589998}
 .copy a:hover{color:#402c7c}
 p{margin:20px 0}
+#notice{color:white;background-color:red;padding:20px;text-align:center}
+#notice p{color:inherit}
 #masthead{padding:20px 30px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap}
 @media screen and (min-width:600px){#masthead{padding:20px 6%}
 }#masthead .logo.wrapper{position:relative;width:30%;margin:0}
