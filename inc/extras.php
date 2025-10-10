@@ -27,12 +27,3 @@ function acstarter_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'acstarter_body_classes' );
-
-/*** Add class to Related Products on Woocommerce ***/
-add_filter( 'woocommerce_output_related_products_args', 'custom_related_products_class' );
-function custom_related_products_class( $args ) {
-	// Add your custom class to the 'before' argument
-	$args['before'] = '<div class="related-products-container related products clear">'; 
-	$args['after'] = '</div>'; // Close the div
-	return $args;
-}
