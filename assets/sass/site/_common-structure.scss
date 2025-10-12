@@ -74,7 +74,7 @@ p {
 #notice {
     color: white;
     background-color: red;
-    padding: $margin-medium;
+    padding: $margin-large;
     text-align: center;
     p {
         color: inherit;
@@ -560,5 +560,44 @@ p {
 .woocommerce {
     div.product div.images .flex-control-thumbs {
         margin-top: 10px;
+    }
+}
+
+/*** Popup notice ***/
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+}
+
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    border-radius: 8px;
+    z-index: 1001;
+    display: none;
+
+    @media screen and (min-width: $deskwidth){
+        width: 1200px;
+    }
+
+    #closePopup {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        color: #FFF;
+        font-size: 20px;
+        padding: 0;
     }
 }

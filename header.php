@@ -23,11 +23,15 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
     <?php if(get_field("notice","option")
-    &&get_field("show_notice","option")
-    &&strcmp(get_field("show_notice","option"),"yes")===0):?>
-        <div id="notice" class="copy">
-            <?php echo get_field("notice","option");?>
-        </div><!--.notice-->
+        &&get_field("show_notice","option")
+        &&strcmp(get_field("show_notice","option"),"yes")===0):?>
+        <div id="overlay"></div>
+        <div id="popup">
+            <div id="notice" class="copy">
+                <?php echo get_field("notice","option");?>
+            </div><!--.notice-->
+            <button id="closePopup">x</button>
+        </div>
     <?php endif;?>
 	<header id="masthead" class="site-header" role="banner">
         <div class="logo wrapper">

@@ -110,4 +110,34 @@ jQuery(document).ready(function ($) {
 		});
 	});
 
+	/*** Popup Notice ***/
+	var poppy = sessionStorage.getItem('myPopup');
+
+	const overlay = document.getElementById('overlay');
+	const popup = document.getElementById('popup');
+	const closePopupBtn = document.getElementById('closePopup');
+
+	function showPopup() {
+		overlay.style.display = 'block';
+		popup.style.display = 'block';
+	}
+
+	function hidePopup() {
+		overlay.style.display = 'none';
+		popup.style.display = 'none';
+	}
+
+	if(!poppy){
+		setTimeout(function(){
+			showPopup();
+		},1000); // 1000 to load it after 1 second from page load
+	
+		closePopupBtn.addEventListener('click', hidePopup);
+		overlay.addEventListener('click', hidePopup); // Close when clicking outside the popup
+
+		sessionStorage.setItem('myPopup','true');
+	}
+
+	//$(window).bind('beforeunload', function(){ localStorage.removeItem('myPopup'); });
+
 });// END #####################################    END
