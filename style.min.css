@@ -830,6 +830,7 @@ p{margin:20px 0}
 .row-minutes .minutes a{color:#589998}
 .row-minutes .minutes a:hover{color:#402c7c}
 #masthead #site-navigation .menu-main-menu-container #primary-menu li.wpmenucartli{margin-top:-3px}
+#masthead #site-navigation .menu-main-menu-container #primary-menu li.wpmenucartli a.wpmenucart-contents{border-bottom:0}
 #masthead #site-navigation .menu-main-menu-container #primary-menu li.wpmenucartli a.wpmenucart-contents i{font-size:25px}
 #masthead #site-navigation .menu-main-menu-container #primary-menu li.wpmenucartli a.wpmenucart-contents span.cartcontents{display:none !important}
 #masthead #site-navigation .menu-main-menu-container #primary-menu li.wpmenucartli a.wpmenucart-contents:hover{border-bottom:0}
