@@ -184,6 +184,10 @@ p {
             @media screen and (min-width: $mobilelandscapewidth){
                 float: right;
             }
+
+            &:hover {
+                color: #402c7c;
+            }
         }
         .fa-bars {
             font-size: 25px;
@@ -528,6 +532,24 @@ p {
             &:hover {
                 color: $color__pdra-dark-blue;
             }
+        }
+    }
+}
+
+/*** woocommerce cart ***/
+#masthead #site-navigation .menu-main-menu-container #primary-menu li.wpmenucartli {
+    margin-top: -3px;
+
+    a.wpmenucart-contents {
+        i {
+            font-size: 25px;
+        }
+        span.cartcontents {
+            display: none !important;
+        }
+
+        &:hover {
+            border-bottom: none;
         }
     }
 }
