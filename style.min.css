@@ -834,7 +834,6 @@ p{margin:20px 0}
 #masthead #site-navigation .menu-main-menu-container #primary-menu li.wpmenucartli a.wpmenucart-contents i{font-size:25px}
 #masthead #site-navigation .menu-main-menu-container #primary-menu li.wpmenucartli a.wpmenucart-contents span.cartcontents{display:none !important}
 #masthead #site-navigation .menu-main-menu-container #primary-menu li.wpmenucartli a.wpmenucart-contents:hover{border-bottom:0}
-.woocommerce .product.has-default-attributes.has-children>.images{opacity:1 !important}
 .woocommerce div.product div.images .flex-control-thumbs{margin-top:10px}
 article.template-index .row-1{position:relative}
 article.template-index .row-1 img.full-width{width:100%;display:block}

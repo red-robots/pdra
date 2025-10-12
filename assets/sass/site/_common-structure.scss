@@ -558,10 +558,6 @@ p {
 
 /*** woocommerce ***/
 .woocommerce {
-    .product.has-default-attributes.has-children>.images {
-        opacity: 1 !important;
-    }
-    
     div.product div.images .flex-control-thumbs {
         margin-top: 10px;
     }
