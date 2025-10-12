@@ -542,7 +542,7 @@ p {
 
     a.wpmenucart-contents {
         border-bottom: none;
-        
+
         i {
             font-size: 25px;
         }
@@ -553,5 +553,16 @@ p {
         &:hover {
             border-bottom: none;
         }
+    }
+}
+
+/*** woocommerce ***/
+.woocommerce {
+    .product.has-default-attributes.has-children>.images {
+        opacity: 1 !important;
+    }
+    
+    div.product div.images .flex-control-thumbs {
+        margin-top: 10px;
     }
 }
