@@ -111,31 +111,39 @@ jQuery(document).ready(function ($) {
 	});
 
 	/*** Popup Notice ***/
-	var poppy = sessionStorage.getItem('myPopup');
+	//sessionStorage.setItem("data", "All the Best");
 
-	const overlay = document.getElementById('overlay');
+	//var newdata = sessionStorage.getItem('data');
+	//var poppy = sessionStorage.getItem('data','noticePopup');
+
+	//const overlay = document.getElementById('overlay');
 	const popup = document.getElementById('popup');
 	const closePopupBtn = document.getElementById('closePopup');
 
 	function showPopup() {
-		overlay.style.display = 'block';
 		popup.style.display = 'block';
+		//overlay.style.display = 'block';
 	}
 
 	function hidePopup() {
-		overlay.style.display = 'none';
 		popup.style.display = 'none';
+		//overlay.style.display = 'none';
 	}
 
-	if(!poppy){
-		setTimeout(function(){
-			showPopup();
-		},1000); // 1000 to load it after 1 second from page load
-	
-		closePopupBtn.addEventListener('click', hidePopup);
-		overlay.addEventListener('click', hidePopup); // Close when clicking outside the popup
+	showPopup();
 
-		sessionStorage.setItem('myPopup','true');
+	closePopupBtn.addEventListener('click', hidePopup);
+
+	if(!poppy){	
+		// 1000 to load it after 1 second from page load
+		// setTimeout(function(){
+		// 	showPopup();
+		// },100);
+	
+		//closePopupBtn.addEventListener('click', hidePopup);
+		//overlay.addEventListener('click', hidePopup); // Close when clicking outside the popup
+
+		//sessionStorage.setItem('noticePopup','true');
 	}
 
 	//$(window).bind('beforeunload', function(){ localStorage.removeItem('myPopup'); });

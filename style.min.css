@@ -836,9 +836,8 @@ p{margin:20px 0}
 #masthead #site-navigation .menu-main-menu-container #primary-menu li.wpmenucartli a.wpmenucart-contents:hover{border-bottom:0}
 .woocommerce div.product div.images .flex-control-thumbs{margin-top:10px}
 #overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5);z-index:1000;display:none}
-#popup{position:fixed;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:90%;border-radius:8px;z-index:1001;display:none}
-@media screen and (min-width:1300px){#popup{width:1200px}
-}#popup #closePopup{position:absolute;top:5px;right:10px;background:transparent;border:0;-webkit-box-shadow:none;box-shadow:none;color:#FFF;font-size:20px;padding:0}
+#popup{position:relative;display:none}
+#popup #closePopup{position:absolute;top:5px;right:10px;background:transparent;border:0;-webkit-box-shadow:none;box-shadow:none;color:#FFF;font-size:21px;padding:0;z-index:1}
 article.template-index .row-1{position:relative}
 article.template-index .row-1 img.full-width{width:100%;display:block}
 article.template-index .row-1 header{margin:0;padding:0 20px;position:absolute;width:100%;top:50%;left:50%;z-index:1;-webkit-transform:translateY(-50%) translateX(-50%);-ms-transform:translateY(-50%) translateX(-50%);transform:translateY(-50%) translateX(-50%);text-align:center}
