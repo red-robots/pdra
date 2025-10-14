@@ -58,14 +58,14 @@ jQuery(document).ready(function ($) {
 	*	Smooth Scroll to Anchor
 	*
 	------------------------------------*/
-	$('a').click(function(){
-		if( $('[name="' + $.attr(this, 'href').substr(1) + '"]').length ){
-			$('html, body').animate({
-				scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
-			}, 500);
-			return false;
-		}
-	});
+	// $('a').click(function(){
+	// 	if( $('[name="' + $.attr(this, 'href').substr(1) + '"]').length ){
+	// 		$('html, body').animate({
+	// 			scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+	// 		}, 500);
+	// 		return false;
+	// 	}
+	// });
 
 	/*
 	*
@@ -134,7 +134,7 @@ jQuery(document).ready(function ($) {
 
 	closePopupBtn.addEventListener('click', hidePopup);
 
-	if(!poppy){	
+	//if(!poppy){	
 		// 1000 to load it after 1 second from page load
 		// setTimeout(function(){
 		// 	showPopup();
@@ -144,7 +144,7 @@ jQuery(document).ready(function ($) {
 		//overlay.addEventListener('click', hidePopup); // Close when clicking outside the popup
 
 		//sessionStorage.setItem('noticePopup','true');
-	}
+	//}
 
 	//$(window).bind('beforeunload', function(){ localStorage.removeItem('myPopup'); });
 
