@@ -130,9 +130,13 @@ jQuery(document).ready(function ($) {
 		//overlay.style.display = 'none';
 	}
 
-	showPopup();
-
-	closePopupBtn.addEventListener('click', hidePopup);
+	// The popup is only in the page when the site notice is switched on.
+	// Without this check the script stops here, and the ready handlers that
+	// come after it (Gravity Forms reveals its forms in one) never run.
+	if ( popup && closePopupBtn ) {
+		showPopup();
+		closePopupBtn.addEventListener('click', hidePopup);
+	}
 
 	//if(!poppy){	
 		// 1000 to load it after 1 second from page load

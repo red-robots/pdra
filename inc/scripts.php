@@ -21,7 +21,7 @@ function acstarter_scripts() {
 	wp_enqueue_script( 
 			'acstarter-custom', 
 			get_template_directory_uri() . '/assets/js/custom.min.js', 
-			array(), '20251014', 
+			array(), '20261106', 
 			true 
 		);
 
